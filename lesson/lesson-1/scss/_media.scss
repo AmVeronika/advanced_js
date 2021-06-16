@@ -1,0 +1,780 @@
+// Transition for hovers
+.trans {
+   transition: all 0.1s linear;
+}
+.trans1 {
+   transition: all 0.2s linear;
+}
+.trans2 {
+   transition: all 0.5s linear;
+}
+
+// Media  $level_4
+@media (min-width: $level_4) {
+   // Hover for input
+   .input-hover {
+      &:hover {
+         border: 1px solid $bittersweetlight;
+         background: none;
+         &::placeholder {
+            color: $bittersweetlight;
+         }
+      }
+      &:focus {
+         border: 1px solid $bittersweet;
+      }
+   }
+   // Hover for button ver.1
+   .button-hover:hover {
+      background: $bittersweet;
+      color: $white;
+      .button-icon {
+         fill: $white;
+      }
+   }
+   // Hover for button ver.2
+   .button-hover2:hover {
+      border: 1px solid $bittersweet;
+      color: $bittersweet;
+   }
+   // Hover for button ver.3
+   .button-hover3:hover {
+      background: $white;
+      color: $bittersweet;
+   }
+   // Hover for button ver.4
+   .button-hover4:hover {
+      border: 1px solid $bittersweet;
+      .card-hover__text,
+      .card-hover__img {
+         color: $bittersweet;
+         path {
+            fill: $bittersweet;
+         }
+      }
+   }
+   // Hover for button ver.5
+   .button-hover5:hover {
+      color: $bittersweet;
+      .product-filter__link-svg path {
+         fill: $bittersweet;
+      }
+   }
+
+   .menu-title-hover:hover {
+      @include fontstyle(bold, text, upper);
+   }
+
+   // Hover for button close
+   .close:hover {
+      fill: $bittersweet;
+   }
+
+   // Hover for arrow color
+   .arrow-hover:hover {
+      i {
+         color: $bittersweet;
+      }
+   }
+   // Hover for link
+   .link-hover:hover {
+      color: $bittersweet;
+   }
+   // Hover for nav item
+   .item:hover {
+      path {
+         fill: $bittersweet;
+         stroke: $bittersweet;
+      }
+   }
+   // Hover for card
+   .shadow:hover {
+      box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.3);
+   }
+   // Hover for checkbox
+   .checkbox-hover:hover {
+      color: $bittersweet;
+   }
+   .scale:hover {
+      transform: scale(1.2);
+   }
+}
+// Hover for card
+.filter-card:hover {
+   .product-card__img {
+      filter: brightness(0.4);
+   }
+   .card-hover {
+      opacity: 1;
+   }
+}
+
+// Media for INDEX
+
+@media all {
+   // Media for Header
+   .header {
+      &-right {
+         &__account,
+         &__cart {
+            @media (max-width: $level_6) {
+               display: none;
+            }
+         }
+         &__drop {
+            @media (max-width: $level_2) {
+               height: 650px;
+            }
+            @media (max-width: $level_3) {
+               height: 600px;
+            }
+            @media (max-width: $level_4) {
+               width: 100%;
+               height: 100vh;
+            }
+         }
+      }
+      &-drop {
+         &__item-link {
+            @media (max-width: $level_3) {
+               line-height: 32px;
+            }
+         }
+         &__close {
+            @media (max-width: $level_3) {
+               text-align: right;
+               padding: 10px 16px 5px;
+            }
+         }
+      }
+      .burger__media {
+         @media (max-width: $level_6) {
+            display: block;
+         }
+      }
+   }
+
+   // Media for Promo
+   .promo {
+      &__wrap {
+         @media (max-width: $level_2) {
+            min-height: 650px;
+            background-position: -175px bottom;
+            background-size: 671px;
+         }
+         @media (max-width: $level_3) {
+            min-height: 600px;
+            background-position: -120px bottom;
+            background-size: 620px;
+         }
+         @media (max-width: $level_4) {
+            min-height: 368px;
+            background-position: left bottom;
+            background-size: 382px;
+         }
+         @media (max-width: $level_5) {
+            background: none;
+            justify-content: center;
+         }
+      }
+      &__h1 {
+         @media (max-width: $level_3) {
+            font-size: 44px;
+            line-height: 30px;
+            margin-right: 34px;
+         }
+         @media (max-width: $level_5) {
+            margin-left: 70px;
+         }
+         @media (max-width: $level_7) {
+            font-size: 38px;
+            margin: 0 auto;
+         }
+      }
+      &__h1::before {
+         @media (max-width: $level_3) {
+            height: 88px;
+            bottom: -4px;
+         }
+         @media (max-width: $level_5) {
+            height: 82px;
+         }
+         @media (max-width: $level_7) {
+            height: 61px;
+            top: 0;
+         }
+      }
+      &__span {
+         @media (max-width: $level_3) {
+            font-size: 24px;
+            line-height: 29px;
+         }
+         @media (max-width: $level_7) {
+            font-size: 20px;
+            line-height: 24px;
+         }
+      }
+   }
+
+   // Media for categories
+   .categories {
+      &__wrap {
+         @media (max-width: $level_1) {
+            gap: 18px;
+         }
+         @media (max-width: $level_3) {
+            grid-template-rows: 200px 130px;
+         }
+         @media (max-width: $level_4) {
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            grid-template-rows: 167px 116px;
+            margin-top: 20px;
+            margin-bottom: 155px;
+         }
+         @media (max-width: $level_5) {
+            grid-template-columns: minmax(310px, 360px);
+            grid-template-rows: auto;
+            justify-content: center;
+            gap: 32px;
+            padding: 0px 15px;
+         }
+      }
+      &__card1 {
+         @media (max-width: $level_7) {
+            max-width: 360px;
+            height: 248px;
+         }
+      }
+      &__card4 {
+         @media (max-width: $level_5) {
+            grid-column: 1;
+         }
+         @media (max-width: $level_7) {
+            width: 100%;
+            height: 111px;
+         }
+      }
+      &-card__img {
+         @media (max-width: $level_7) {
+            width: 100%;
+            height: 100%;
+         }
+      }
+   }
+}
+
+// Media for product
+.product {
+   &__wrap {
+      @media (max-width: $level_3) {
+         margin-bottom: 65px;
+      }
+   }
+   &__grid-wrap {
+      @media (max-width: $level_4) {
+         gap: 16px;
+         margin: 72px auto 33px;
+         justify-content: center;
+      }
+      @media (max-width: $level_7) {
+         grid-template-columns: 1fr;
+      }
+   }
+   &-card {
+      &__img {
+         @media (max-width: $level_7) {
+            width: 100%;
+            height: auto;
+         }
+      }
+      &__name {
+         @media (max-width: $level_7) {
+            grid-template-columns: 310px;
+         }
+      }
+   }
+}
+
+// Media for feature
+.feature {
+   &__flex-wrap {
+      @media (max-width: $level_3) {
+         flex-direction: column;
+         align-items: center;
+         padding: 0 15px 64px;
+      }
+   }
+   &__item {
+      @media (max-width: $level_3) {
+         max-width: 360px;
+         margin-top: 48px;
+      }
+   }
+}
+
+// Footer
+
+// Media for subscribe
+.subscribe {
+   @media (max-width: $level_3) {
+      background-position: 27% bottom;
+   }
+   &__wrap {
+      @media (max-width: $level_2) {
+         justify-content: space-around;
+      }
+      @media (max-width: $level_3) {
+         flex-direction: column;
+         align-items: center;
+         padding: 53px 15px 140px;
+      }
+      @media (max-width: $level_6) {
+         padding: 64px 9px 109px;
+      }
+   }
+   &__info {
+      @media (max-width: $level_2) {
+         width: 365px;
+      }
+      @media (max-width: $level_7) {
+         width: 320px;
+      }
+   }
+   &__form-wrap {
+      @media (max-width: $level_2) {
+         margin-right: 0;
+      }
+      @media (max-width: $level_3) {
+         margin-top: 48px;
+      }
+   }
+   &__input {
+      @media (max-width: $level_7) {
+         padding: 16px 28px 16px 28px;
+      }
+   }
+   &-info__h4 {
+      @media (max-width: $level_7) {
+         font-size: 18px;
+      }
+   }
+   &__h4 {
+      @media (max-width: $level_7) {
+         font-size: 14px;
+      }
+   }
+}
+// Footer_wrap
+.footer {
+   &__wrap {
+      @media (max-width: $level_6) {
+         flex-direction: column-reverse;
+         padding-bottom: 9px;
+      }
+   }
+   &__links {
+      @media (max-width: $level_6) and (min-width: $level_8) {
+         padding: 43px 0 40px;
+      }
+   }
+}
+// }
+
+// Media for CATALOG
+
+@media all {
+   // New arrivals
+   .arrivals {
+      &__wrap {
+         @media (max-width: $level_6) {
+            flex-direction: column;
+         }
+      }
+      &__h3--pb {
+         @media (max-width: $level_6) {
+            padding-bottom: 32px;
+         }
+      }
+   }
+   .main .pb-46 {
+      @media (max-width: $level_6) {
+         padding: 24px 0 46px;
+      }
+   }
+   // Product
+   .product {
+      &__sidebar {
+         @media (max-width: $level_0) {
+            justify-content: center;
+         }
+         @media (max-width: $level_4) {
+            display: flex;
+            justify-content: space-between;
+         }
+         @media (max-width: $level_6) {
+            display: flex;
+            justify-content: center;
+         }
+      }
+      &-sidebar__filter {
+         @media (max-width: $level_7) {
+            margin-left: -16px;
+         }
+      }
+      &-filter {
+         &__link {
+            &--span {
+               @media (max-width: $level_6) {
+                  display: none;
+               }
+            }
+            &-svg {
+               @media (max-width: $level_6) {
+                  width: 37px;
+                  height: 25px;
+                  margin-left: 0;
+               }
+            }
+         }
+      }
+      &-options {
+         &__details summary {
+            @media (max-width: $level_6) {
+               padding-right: 21px;
+               margin-right: 20px;
+            }
+         }
+         &__details[open] summary {
+            @media (max-width: $level_6) {
+               padding-right: 21px;
+               margin-right: 20px;
+            }
+         }
+         &__details[open] .mr-0 {
+            @media (max-width: $level_6) {
+               margin-right: 0;
+            }
+         }
+         &__summary {
+            @media (max-width: $level_6) {
+               font-size: 12px;
+            }
+         }
+      }
+      &-sidebar__options {
+         @media (max-width: $level_0) {
+            justify-content: flex-end;
+         }
+      }
+      &__grid-wrap--catalog {
+         @media (max-width: $level_0) {
+            margin: 40px auto;
+         }
+         @media (max-width: $level_6) {
+            margin: 32px auto 40px;
+         }
+      }
+      &__card--none {
+         @media (max-width: $level_0) {
+            display: none;
+         }
+      }
+   }
+}
+
+// Media for CART
+
+@media all {
+   // Media for arrivals
+   .main .pb-69 {
+      @media (max-width: $level_5) {
+         padding: 50px 0 69px;
+      }
+   }
+   // Media for shopping
+   .shopping {
+      @media (max-width: $level_1) {
+         justify-content: center;
+         margin-top: 59px;
+      }
+      @media (max-width: $level_5) {
+         margin-top: 39px;
+      }
+      @media (max-width: $level_7) {
+         margin-bottom: 96px;
+      }
+      &__wrap {
+         @media (max-width: $level_1) {
+            max-width: 768px;
+            margin-bottom: 64px;
+         }
+         @media (max-width: $level_5) {
+            max-width: 580px;
+            justify-content: center;
+            margin-bottom: 49px;
+         }
+      }
+      // Cards container
+      &__grid-wrap {
+         @media (max-width: $level_1) {
+            width: 100%;
+         }
+         @media (max-width: $level_5) {
+            width: auto;
+            row-gap: 32px;
+         }
+      }
+      &__card {
+         @media (max-width: $level_5) {
+            gap: 17px;
+         }
+         @media (max-width: $level_7) {
+            grid-template-columns: 143px 154px 27px;
+         }
+      }
+      &-card__img {
+         @media (max-width: $level_5) {
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+      &-card__name {
+         @media (max-width: $level_5) {
+            gap: 17px;
+            margin-top: 13px;
+            margin-bottom: 38px;
+         }
+         @media (max-width: $level_7) {
+         }
+      }
+      &-name__h3 {
+         @media (max-width: $level_5) {
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 19px;
+         }
+         @media (max-width: $level_7) {
+            margin-bottom: 5px;
+         }
+      }
+      &-card__text {
+         @media (max-width: $level_5) {
+            font-size: 14px;
+            line-height: 17px;
+         }
+      }
+      &-card__input {
+         @media (max-width: $level_5) {
+            font-size: 10px;
+            line-height: 12px;
+            margin-left: 15px;
+         }
+      }
+      &-card__close {
+         @media (max-width: $level_5) {
+            margin-top: 13px;
+         }
+         &-svg {
+            @media (max-width: $level_6) {
+               width: 10px;
+               height: 10px;
+            }
+         }
+      }
+
+      // Buttons cart
+      &__button {
+         @media (max-width: $level_1) {
+            width: 510px;
+            margin: 62px auto 0;
+         }
+         @media (max-width: $level_5) {
+            width: 358px;
+            margin-top: 30px;
+         }
+      }
+      &-button__media {
+         @media (max-width: $level_5) {
+            padding: 8px 36.5px;
+            font-size: 12px;
+            line-height: 14px;
+            text-transform: none;
+         }
+      }
+
+      // Form container
+      &__form {
+         @media (max-width: $level_1) {
+            display: flex;
+            margin-left: 0;
+            margin-top: 0;
+            width: 100%;
+            max-width: 768px;
+            justify-content: space-between;
+         }
+         @media (max-width: $level_6) {
+            flex-wrap: wrap;
+            justify-content: center;
+         }
+      }
+      // Delivery registration
+      &__delivery {
+         @media (max-width: $level_1) {
+            max-width: 360px;
+            width: 100%;
+         }
+         @media (max-width: $level_4) {
+            margin-right: 15px;
+         }
+         @media (max-width: $level_6) {
+            margin-right: 0;
+         }
+      }
+      &-delivery__button {
+         @media (max-width: $level_4) {
+            font-size: 11px;
+            line-height: 13px;
+         }
+         @media (max-width: $level_5) {
+            text-transform: none;
+            padding: 10px 22px 10px 22px;
+         }
+      }
+
+      // Total cost
+      &__totalcost {
+         @media (max-width: $level_1) {
+            max-width: 360px;
+            width: 100%;
+            margin-top: 42px;
+            margin-bottom: 20px;
+         }
+         @media (max-width: $level_6) {
+            margin-bottom: 0;
+         }
+      }
+      &-totalcost__button {
+         @media (max-width: $level_7) {
+            padding: 14px 6px;
+         }
+      }
+   }
+}
+
+// Media for PRODUCT
+
+@media all {
+   .product {
+      &-karusel__img img {
+         @media (max-width: $level_5) {
+            width: 100%;
+         }
+      }
+      &-preview__description {
+         @media (max-width: $level_3) {
+            top: 0;
+            border-bottom: 1px solid #eaeaea;
+            border-top: 1px solid #eaeaea;
+            background: #ffffff;
+            padding-top: 65px;
+            padding-bottom: 65px;
+         }
+      }
+
+      // Product description
+      &-description__info {
+         @media (max-width: $level_7) {
+            padding-bottom: 32px;
+         }
+         @media (max-width: $level_5) {
+            border-bottom: none;
+            position: relative;
+         }
+      }
+      &-description__info::after {
+         @media (max-width: $level_5) {
+            content: "";
+            position: absolute;
+            top: 278px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 47%;
+            height: 1px;
+            background: #eaeaea;
+         }
+      }
+      &-description__text {
+         @media (max-width: $level_6) {
+            padding-left: 10px;
+            padding-right: 10px;
+         }
+         @media (max-width: $level_7) {
+            line-height: 20px;
+            margin-top: 32px;
+         }
+      }
+      &-sort__summary {
+         @media (max-width: $level_7) {
+            font-size: 10px;
+         }
+      }
+      &-description__sort {
+         margin-top: 49px;
+      }
+      // Product
+      .mt-129 {
+         @media (max-width: $level_7) {
+            margin-top: 64px;
+         }
+      }
+   }
+}
+// Media for REGISTRATION
+
+@media all {
+   .registration {
+      @media (max-width: $level_2) {
+         gap: 90px;
+      }
+      @media (max-width: $level_3) {
+         gap: 50px;
+         margin: 40px auto 95px;
+      }
+      @media (max-width: $level_4) {
+         gap: 22px;
+      }
+      @media (max-width: $level_5) {
+         display: flex;
+         flex-direction: column;
+         max-width: 360px;
+      }
+      @media (max-width: $level_6) {
+         align-items: center;
+      }
+      &__form {
+         @media (max-width: $level_5) {
+            margin-bottom: 30px;
+         }
+      }
+      &-advantages {
+         &__h3 {
+            @media (max-width: $level_3) {
+               font-size: 16px;
+            }
+         }
+         &__text {
+            @media (max-width: $level_3) {
+               font-size: 16px;
+               line-height: 19px;
+            }
+         }
+      }
+      &-list__item {
+         @media (max-width: $level_3) {
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 13px;
+         }
+      }
+   }
+}

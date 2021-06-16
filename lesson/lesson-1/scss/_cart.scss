@@ -1,0 +1,173 @@
+.shopping {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin-top: 96px;
+   margin-bottom: 128px;
+   &__wrap {
+      max-width: 652px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 46px;
+   }
+   &__grid-wrap {
+      display: grid;
+      row-gap: 40px;
+   }
+   // Cards container
+   &__card {
+      display: grid;
+      grid-template-columns: 35% 5fr 1fr;
+      column-gap: 31px;
+      box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+   }
+   &-card {
+      &__img {
+         width: 100%;
+      }
+      &__link {
+         overflow: hidden;
+      }
+   }
+   &-name__h3 {
+      @include fontstyle(regular, h3, cap);
+      line-height: 28px;
+      color: #222222;
+      margin-bottom: 36px;
+   }
+   &-card__text {
+      @include fontstyle(regular, 0, cap);
+      font-size: 22px;
+      line-height: 27px;
+      color: #575757;
+      margin-top: 6px;
+   }
+   &-card__text-block {
+      display: inline-block;
+   }
+   &-card__text-color {
+      color: $bittersweet;
+   }
+   &-card__input {
+      @include fontstyle(regular, h4, cap);
+      line-height: 28px;
+      color: #656565;
+      text-align: center;
+      width: 43px;
+      height: 24px;
+      border: 1px solid #eaeaea;
+      margin-left: 24px;
+   }
+   &-card__close {
+      height: 18px;
+      // margin-left: 30px;
+      // margin-right: 20px;
+      background: none;
+      cursor: pointer;
+   }
+   &-card__name,
+   &-card__close {
+      margin-top: 22px;
+   }
+   // Form container
+   &__form {
+      max-width: 360px;
+      width: 100%;
+      margin-top: 18px;
+      margin-left: 25px;
+   }
+   // Delivery registration
+   &__h5 {
+      @include fontstyle(light, h5, upper);
+      line-height: 20px;
+      color: #222222;
+   }
+   &-delivery__adress {
+      width: 100%;
+      @include fontstyle(light, none, cap);
+      font-size: 13px;
+      line-height: 16px;
+      border: 1px solid #a4a4a4;
+      padding: 13px 0 16px 18px;
+      margin-top: 20px;
+   }
+   &-delivery__color {
+      color: #222222;
+   }
+   &-delivery__button {
+      display: block;
+      border: 1px solid #a4a4a4;
+      margin-top: 23px;
+      padding: 11px 12px 11px 12px;
+      background: $white;
+      @include fontstyle(light, text, upper);
+      line-height: 16px;
+      color: #b1b1b1;
+   }
+
+   // Total cost
+   &__totalcost {
+      margin-top: 57px;
+      background: #f5f3f3;
+      padding: 40px 42px 40px 43px;
+      text-align: right;
+   }
+   &-totalcost__small {
+      display: inline-block;
+      text-align: right;
+      @include fontstyle(regular, small, upper);
+      line-height: 13px;
+      color: #4a4a4a;
+      margin-bottom: 12px;
+   }
+   &-totalcost__small-indent {
+      margin-right: 25px;
+   }
+   &-totalcost__h5 {
+      display: inline-block;
+      @include fontstyle(light, h5, upper);
+      line-height: 19px;
+   }
+   &-totalcost__h5-collor {
+      display: inline-block;
+      @include fontstyle(semibold, h5, upper);
+      line-height: 19px;
+      color: $bittersweet;
+      margin-left: 25px;
+      margin-bottom: 21px;
+   }
+   &__border {
+      width: 100%;
+      height: 1px;
+      background: #e2e2e2;
+   }
+   &-totalcost__button {
+      width: 100%;
+      display: inline-block;
+      border: 1px solid $bittersweet;
+      background: $bittersweet;
+      @include fontstyle(light, h5, upper);
+      line-height: 19px;
+      color: $white;
+      padding: 14px;
+      margin-top: 17px;
+   }
+
+   // Button cart
+   &__button {
+      max-width: 652px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 72px;
+   }
+   &-button__text {
+      @include fontstyle(light, text, upper);
+      line-height: 17px;
+      color: $black;
+      background: none;
+      border: 1px solid #a4a4a4;
+      padding: 17px 41px 16px 39px;
+   }
+}
