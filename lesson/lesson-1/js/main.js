@@ -33,12 +33,9 @@ const renderProduct = (item) => {
    </div>`
 };
 
-
 // 2.
 const renderPage = (list) => {
-   const productsList = list.map((item) => renderProduct(item));
-   console.log(productsList);
-   document.querySelector('.product__grid-wrap--catalog').innerHTML = productsList.join(' '); //Использовали метод .join() для разделения элементов массива пробелами
+   document.querySelector('.product__grid-wrap--catalog').innerHTML =  list.map((item) => renderProduct(item)).join(' '); //Использовали метод .join() для разделения элементов массива пробелами
 }
 
 
