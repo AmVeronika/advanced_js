@@ -13,6 +13,7 @@
    }
    &__grid-wrap {
       display: grid;
+      width: 100%;
       row-gap: 40px;
    }
    // Cards container
@@ -25,9 +26,7 @@
    &-card {
       &__img {
          width: 100%;
-      }
-      &__link {
-         overflow: hidden;
+         object-fit: cover;
       }
    }
    &-name__h3 {

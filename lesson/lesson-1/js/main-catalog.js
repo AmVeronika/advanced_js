@@ -1,5 +1,5 @@
 // Массив объектов (карточек продуктов)
-const products = [
+const productsCatalog = [
    {id:1, title:"ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price:52.00},
    {id:2, title:"ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price:52.00},
    {id:3, title:"ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price:52.00},
@@ -12,7 +12,7 @@ const products = [
 ];
 
 // 3. Функция для формирования вёрстки каждого товара
-const renderProduct = (item) => {
+const renderProductCatalog = (item) => {
    return `<div class="product__card shadow filter-card trans">
       <img src="img/catalog/product-card${item.id}.jpg" width="360" height="420" alt="product card trans"
          class="product-card__img">
@@ -34,11 +34,11 @@ const renderProduct = (item) => {
 };
 
 // 2.
-const renderPage = (list) => {
-   document.querySelector('.product__grid-wrap--catalog').innerHTML =  list.map((item) => renderProduct(item)).join(' '); //Использовали метод .join() для разделения элементов массива пробелами
+const renderPageCatalog = (list) => {
+   document.querySelector('.product__grid-wrap--catalog').innerHTML =  list.map((item) => renderProductCatalog(item)).join(' '); //Использовали метод .join() для разделения элементов массива пробелами
 }
 
 
 
 // 1. Запуск функции для добавления товаров в блок
-renderPage(products);
+renderPageCatalog(productsCatalog);

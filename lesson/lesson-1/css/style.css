@@ -1345,6 +1345,7 @@ body {
 .shopping__grid-wrap {
   display: -ms-grid;
   display: grid;
+  width: 100%;
   row-gap: 40px;
 }
 
@@ -1361,10 +1362,8 @@ body {
 
 .shopping-card__img {
   width: 100%;
-}
-
-.shopping-card__link {
-  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .shopping-name__h3 {
