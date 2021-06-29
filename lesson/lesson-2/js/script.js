@@ -31,13 +31,14 @@ filter.addEventListener("click", () => {
 cartButtonOpen.addEventListener('click', () => {
    document.querySelector('.cart').classList.toggle('cart-active');
 })
+// закрытие модального окна при нажатии на ESC
 window.onkeydown = (evt) => {
    if (evt.keyCode == 27) {
       document.querySelector('.cart').classList.remove('cart-active');
    }
 }
+// закрытие модального окна при нажатии на серое поле
 cartBlockOpen.addEventListener('click', (event) => {
-   console.log(event.toElement.className);
    if (event.toElement.className == 'cart cart-active') {
       document.querySelector('.cart').classList.remove('cart-active');
    }
