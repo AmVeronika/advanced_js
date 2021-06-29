@@ -49,7 +49,7 @@
                </svg>
             </a>
             <!-- cart  -->
-            <a class="header-right__cart" href="cart.html">
+            <button class="header-right__cart" type="button">
                <svg class="header-right-cart__img item trans" width="32" height="29" viewBox="0 0 32 29" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -57,7 +57,7 @@
                      fill="#E8E8E8" />
                </svg>
                <p class="header-right-cart__count">1</p>
-            </a>
+            </button>
          </div>
       </div>
       <!-- drop burger-menu -->
@@ -238,7 +238,7 @@
             </div> <!-- Sidebar end -->
 
             <article class="product__grid-wrap product__grid-wrap--catalog">
-            
+
             </article>
             <!-- Pagination  -->
             <ul class="product-pagination__list">
@@ -319,6 +319,68 @@
 
       </aside> <!-- Feature end -->
    </main> <!-- Main  end-->
+
+
+   <!-- Cart  -->
+   
+   <div class="cart">
+      <!-- Shopping cart -->
+      <section class="shopping container">
+         <div class="shopping__wrap">
+            <!-- Cards container  -->
+            <div class="shopping__grid-wrap">
+               <!-- Card - 1 -->
+               <!-- Card - 2 -->
+            </div>
+         </div>
+         <!-- Form container -->
+         <form action="#" class="shopping__form">
+            <!-- Delivery registration -->
+            <div class="shopping__delivery">
+               <h5 class="shopping__h5">Shopping Adress</h5>
+               <!-- Сountry selection -->
+               <datalist id="country" class="shopping-delivery__adress">
+                  <option value="Bangladesh">Bangladesh</option>
+                  <option value="Россия">Россия</option>
+                  <option value="Австралия">Австралия</option>
+                  <option value="Австрия">Австрия</option>
+                  <option value="Ангилья">Ангилья</option>
+                  <option value="Багамские острова">Багамские острова</option>
+                  <option value="Босния/Герцеговина">Босния/Герцеговина</option>
+                  <option value="Венгрия">Венгрия</option>
+                  <option value="Гаити">Гаити</option>
+                  <option value="Гонконг">Гонконг</option>
+                  <option value="Кипр">Кипр</option>
+                  <option value="Мальдивские острова">Мальдивские острова</option>
+                  <option value="О.А.Э.">О.А.Э.</option>
+                  <option value="Эстония">Эстония</option>
+                  <option value="Эфиопия">Эфиопия</option>
+                  <option value="ЮАР">ЮАР</option>
+                  <option value="Япония">Япония</option>
+               </datalist>
+               <input class="shopping-delivery__adress input-hover" type="text" list="country" placeholder="Bangladesh">
+               <!-- State ​​selection -->
+               <input type="text" class="shopping-delivery__adress shopping-delivery__color input-hover" required
+                  placeholder="State">
+               <!-- Postcode -->
+               <input type="text" class="shopping-delivery__adress shopping-delivery__color input-hover" required
+                  placeholder="Postcode / Zip">
+               <button class="shopping-delivery__button button-hover2" type="submit">Get a quote</button>
+            </div>
+            <!-- Total cost  -->
+            <div class="shopping__totalcost">
+               <p class="shopping-totalcost__small shopping-totalcost__small-indent">Sub total</p>
+               <p class="shopping-totalcost__small">$900</p>
+               <br>
+               <h5 class="shopping-totalcost__h5 shopping-totalcost__indent">Grand Total</h5>
+               <h5 class="shopping-totalcost__h5 shopping-totalcost__h5-collor">$900</h5>
+               <div class="shopping__border"></div>
+               <button class="shopping-totalcost__button button-hover3" type="submit">Proceed to checkout</button>
+            </div>
+         </form>
+      </section> <!-- Shopping cart end -->
+   </div>
+   <!-- Cart END  -->
 
    <!-- Footer  -->
    <footer class="footer">

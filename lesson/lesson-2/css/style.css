@@ -209,11 +209,12 @@ body {
 
 .header-right__cart {
   position: relative;
+  background: none;
 }
 
 .header-right-cart__count {
   position: absolute;
-  top: -25px;
+  top: -15px;
   left: 22px;
   font-weight: 400;
   text-transform: none;
@@ -1325,8 +1326,12 @@ body {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 96px;
+  margin-top: 40px;
   margin-bottom: 128px;
+  background: #fffffff5;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.79);
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.79);
 }
 
 .shopping__wrap {
@@ -1339,25 +1344,36 @@ body {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 46px;
+  margin-bottom: 15px;
 }
 
 .shopping__grid-wrap {
   display: -ms-grid;
   display: grid;
-  width: 100%;
+  min-width: 100%;
+  max-width: 652px;
   row-gap: 40px;
+  height: 80vh;
+  overflow: auto;
+  padding-right: 15px;
+  margin-top: 15px;
 }
 
 .shopping__card {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 35% 5fr 1fr;
-      grid-template-columns: 35% 5fr 1fr;
-  -webkit-column-gap: 31px;
-          column-gap: 31px;
+  -ms-grid-columns: 25% 2fr 1fr;
+      grid-template-columns: 25% 2fr 1fr;
+  -ms-grid-rows: 222px;
+      grid-template-rows: 222px;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
   -webkit-box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
           box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+}
+
+.shopping-card__link {
+  overflow: hidden;
 }
 
 .shopping-card__img {
@@ -1372,7 +1388,7 @@ body {
   text-transform: capitalize;
   line-height: 28px;
   color: #222222;
-  margin-bottom: 36px;
+  margin-bottom: 15px;
 }
 
 .shopping-card__text {
@@ -1528,7 +1544,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 72px;
+  margin-top: 50px;
 }
 
 .shopping-button__text {
@@ -1540,6 +1556,22 @@ body {
   background: none;
   border: 1px solid #a4a4a4;
   padding: 17px 41px 16px 39px;
+}
+
+.cart {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 100%;
+  z-index: 15;
+  background: #6f6e6ed1;
+}
+
+.cart-active {
+  display: block;
 }
 
 .registration {
