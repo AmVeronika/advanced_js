@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Burger calc</title>
+</head>
+
+<body>
+   <form action="#">
+      <h1>Бургер по твоему рецепту</h1>
+      <fieldset id="fields">
+         <!-- Выбор размера  -->
+         <fieldset id="fields-size">
+            <h3>Размер бургера</h3>
+            <label for="#"><input type="radio" name="size" value="Small" data-price="50" data-calory="20"
+                  checked>Маленький (50 рублей, 20 калорий)</label>
+            <br>
+            <label for="#"><input type="radio" name="size" value="Big" data-price="100" data-calory="40">
+               Большой (100 рублей, 40 калорий)</label>
+         </fieldset>
+         <!-- Выбор начинки -->
+         <fieldset id="fields-filling">
+            <h3>Начинка бургера</h3>
+            <label for="#"><input type="radio" name="filling" value="cheese" data-price="10" data-calory="20">
+               С сыром (+10 рублей, +20 калорий)</label>
+            <br>
+            <label for="#"><input type="radio" name="filling" value="salad" data-price="20" data-calory="5" checked>
+               С салатом (+20 рублей, +5 калорий)</label>
+            <br>
+            <label for="#"><input type="radio" name="filling" value="potato" data-price="15" data-calory="10">
+               С картофелем (+15 рублей, +10 калорий)</label>
+         </fieldset>
+         <!-- Дполонительные опции -->
+         <fieldset id="fields-extra">
+            <h3>Дополнительные опции</h3>
+            <label for="#"><input type="checkbox" name="extra" value="spices" data-price="15" data-calory="0">
+               Посыпать приправой (+15 рублей, +0 калорий) </label>
+            <br>
+            <label for="#"><input type="checkbox" name="extra" value="mayonnaise" data-price="20" data-calory="5">
+               Полить майонезом (+20 рублей, +5 калорий)</label>
+         </fieldset>
+      </fieldset>
+      <!-- Расчёт стоимости и каллорийности -->
+      <button type="button" id="button">Собрать бургер</button>
+      <p>Количество коллорий: <span id="price">0</span> каллорий</p>
+      <p>Конечная стоимость: <span id="calory">0</span> рублей</p>
+   </form>
+
+
+   <script>
+      //Вызов функции при загрузки DOM
+      window.onload = function () {
+         document.querySelector('#button').addEventListener('click', () => {
+            let myBurger = new MyBurger('size', 'filling', 'extra');
+            console.log(myBurger);
+            myBurger.showSum('#price', '#calory');
+         })
+      }
+      //--------------------------------------------------------------------
+      //-----Н А П О Л Н Е Н И Е  З Н А Ч Е Н И Я М И ----------------------
+      //--------------------------------------------------------------------
+      class Findings {
+         constructor(el) {//Передаём элемент, который выбрал пользователь
+            this.name = el.value;//Размер
+            this.price = +el.dataset['price'];//Цена
+            this.calory = +el.dataset['calory'];//Каллории
+         }
+      }
+      //--------------------------------------------------------------------
+      //------- C Б О Р К А  Б У Р Г Е Р А ---------------------------------
+      //--------------------------------------------------------------------
+      class MyBurger {
+         constructor(size, filling, extra) {
+            this.size = new Findings(this._selected(size));//Размер
+            this.filling = new Findings(this._selected(filling));//Наполнение
+            this.extra = this._getExtra(extra);//Дополнительно
+         }
+         //-- П О Л У Ч Е Н И Е  З Н А Ч Е Н И Й  Р А Д И О  К Н О П О К ---
+         _selected(name) { //ненаследуемый метод _selected
+            return document.querySelector(`input[name=${name}]:checked`);
+         }
+         //-- П О Л У Ч Е Н И Е  З Н А Ч Е Н И Й  C H E C K  К Н О П О К ---
+         _getExtra(name) {//
+            let arrExtra = [];
+            this._selectedExtra(name).forEach(el => arrExtra.push(new Findings(el)));
+            return arrExtra;
+         }
+         //--С О З Д А Н И Е  М А С С И В А  И З  В Ы Б Р А Н Н Ы Х  Д О П. П Р Е Д Л О Ж Е Н И Й -----
+         _selectedExtra(name) {
+            return [...document.querySelectorAll(`input[name=${name}]:checked`)];
+         }
+         //----------------------------------------------------------------
+         //- Р А С Ч Ё Т  С Т О И М О С Т И  И  К А Л Л О Р И Й Н О С Т И -
+         _calcSum() {
+            let result = this.size.price + this.filling.price;
+            this.extra.forEach(el => result += el.price);
+            return result;
+         }
+         _calcCalory() {
+            let result = this.size.calory + this.filling.calory;
+            this.extra.forEach(el => result += el.calory);
+            return result;
+         }
+         //----------------------------------------------------------------
+         //-- В Ы В О Д  В  D O M  С Т О И М О С Т Ь  и  К А Л Л О Р И И -- 
+         showSum(price, calory) {
+            document.querySelector(price).innerHTML = this._calcSum();
+            document.querySelector(calory).innerHTML = this._calcCalory();
+         }
+      }
+
+   </script>
+</body>
+
+</html>
