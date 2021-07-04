@@ -1,3 +1,22 @@
+//-------------Создание запроса на сервер-------------
+function makeGETRequest(url) {
+   //------------ES-5-------------
+   //-----------------------------
+   // let xhr = new XMLHttpRequest();
+   // xhr.open('GET', url, true);// Метод и адрес запроса , а также вид (асинхронный)
+   // xhr.onreadystatechange = function () { //Слушатель изменения готовности статуса
+   //    if (xhr.readyState === 4) {
+   // let data = JSON.parse(xhr.responseText); //xhr.responseText -исходный текст(строка) ,который парсим в объект js и передаем в data
+   //    }
+   // }
+   // xhr.send();// Запускаем передачу запроса
+   //------------ES-6-------------
+   //-----------------------------
+   return fetch(url) //fetch- функция, которая выполняет ajax запрос и возвращает объект промис 
+      .then(text => text.json())// .json() - метод, который парсит строку и возвращает объект промис
+      .catch(err => console.log(err));
+} // 
+
 //----------------------------------------------------
 //--------------К А Т А Л О Г-------------------------
 //----------------------------------------------------
@@ -13,7 +32,7 @@ class GoodsItemCatalog {
    }
    //--Метод для формирования вёрстки каждого товара--
    renderProductCatalog() {
-      return `<div class="product__card shadow filter-card trans">
+      return `<div class="product__card shadow filter-card trans" id="${this.id}-p-catalog">
      <img src="img/catalog/product-card${this.id}.jpg" width="360" height="420" alt="product card trans"
         class="product-card__img">
      <a href="product.html" class="product-card__name">
@@ -21,7 +40,7 @@ class GoodsItemCatalog {
         <p class="product-card__text">${this.descp}</p>
         <p class="product-card__text-options">$${this.price}</p>
      </a>
-     <button class="card-hover button-hover4 trans1">
+     <button class="card-hover button-hover4 trans1" data-btn-cart-add="${this.id}">
         <svg class="card-hover__img trans" width="26" height="24" viewBox="0 0 32 29" fill="none"
            xmlns="http://www.w3.org/2000/svg">
            <path class="trans"
@@ -37,44 +56,28 @@ class GoodsItemCatalog {
 //----------Класс создания каталога карточек----------
 class ProductsCatalog {
    constructor() {
-      this.products = [];//Массив объектов (карточек продуктов)
+      this.products = [];//Массив объектов JSON (карточек продуктов)
    }
    //-------Метод передачи карточек в массив-----------
    fetchProducts() {
-      this.products = [
-         { id: 1, title: "ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52.00 },
-         { id: 2, title: "ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52.00 },
-         { id: 3, title: "ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52.00 },
-         { id: 4, title: "ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52.00 },
-         { id: 5, title: "ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52.00 },
-         { id: 6, title: "ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52.00 },
-         { id: 7, title: "ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52.00 },
-         { id: 8, title: "ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52.00 },
-         { id: 9, title: "ELLERY X M'O CAPSULE", descp: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52.00 },
-      ];
+      makeGETRequest('json/catalogData.json')// в makeGETRequest передали адресс json, получили промис 
+         .then(data => {
+            this.products = data;
+            this.renderPageCatalog();
+         })
    }
    //-------Метод рендеринга каталога------------------
    renderPageCatalog() {
       let listProductCatalogHtml = '';
       this.products.forEach(product => {
-         const goodItem = new GoodsItemCatalog(product.id, product.title, product.price, product.descp,);
+         const goodItem = new GoodsItemCatalog(product.id_product, product.title, product.price, product.descp,);
          listProductCatalogHtml += goodItem.renderProductCatalog();
       });
       document.querySelector('.product__grid-wrap--catalog').innerHTML = listProductCatalogHtml;
    }
-   //-----Метод подсчёта общей суммы всех товаров в каталоге----
-   sumCount() {
-      let zeroPrice = 0;
-      this.products.forEach(product => {
-         zeroPrice += product.price;
-      })
-      document.querySelector('.product__grid-wrap--catalog').innerHTML = zeroPrice;
-   }
 }
 const listProductCatalog = new ProductsCatalog();
-listProductCatalog.fetchProducts();// 2. Запуск метода Передачи карточек в массив
-listProductCatalog.renderPageCatalog(); // 3. Запуск метода создания верстки под карточку и добавления в контейнер 
-// listProductCatalog.sumCount();// 4. Подсчёт всей суммы товаров в каталоге
+listProductCatalog.fetchProducts();// 2. Запуск метода Получени данных товаров с сервера
 
 
 //----------------------------------------------------
@@ -93,7 +96,7 @@ class GoodsItemCart {
    }
    //--Метод для формирования вёрстки каждого товара в корзине--
    renderProductCart() {
-      return `<div class="shopping__card shadow">
+      return `<div class="shopping__card shadow" id="${this.id}-p-cart">
          <a href="product.html" class="shopping-card__link">
             <img class="shopping-card__img  scale trans" src="img/catalog/product-card${this.id}.jpg" width="262"
                height="100%" alt="product">
@@ -104,11 +107,11 @@ class GoodsItemCart {
             <p class="shopping-card__text">Color: <span class="shopping-card__text-span">${this.color}</span></p>
             <p class="shopping-card__text">Size: <span class="shopping-card__text-span">${this.size}</span></p>
             <p class="shopping-card__text shopping-card__text-block">Quantity: </p>
-            <input class="shopping-card__input input-hover " type="number" name="quantity" required min="1"
-               value="1">
+            <input class="shopping-card__input input-hover " type="number" name="quantity" required min="0"
+               value="1" data-quantity-product="${this.id}" id="${this.id}-quantity-product">
          </div>
          <!-- close button -->
-         <button type="submit" class="shopping-card__close">
+         <button type="submit" class="shopping-card__close" data-btn-cart-close="${this.id}">
             <svg class="shopping-card__close-svg close trans" width="18" height="18" viewBox="0 0 18 18"
                fill="#575757" xmlns="http://www.w3.org/2000/svg">
                <path
@@ -121,25 +124,22 @@ class GoodsItemCart {
 //-------Класс создания карточек в корзине-------
 class ProductsCart {
    constructor() {
-      this.products = [];//Массив объектов (карточек продуктов в корзине)
+      this.products = [];//Массив объектов JSON (карточек продуктов в корзине)
    }
    //-------Метод передачи карточек в массив-----------
    fetchProducts() {
-      this.products = [
-         { id: 1, title: "MANGO PEOPLE", price: 300, color: 'red', size: 'Xl', },
-         { id: 2, title: "MANGO PEOPLE", price: 300, color: 'red', size: 'Xl', },
-         { id: 3, title: "MANGO PEOPLE", price: 300, color: 'red', size: 'Xl', },
-         { id: 4, title: "MANGO PEOPLE", price: 300, color: 'red', size: 'Xl', },
-      ];
+      makeGETRequest('json/getBasket.json')
+
+         .then(data => {
+            this.products = data.contents;
+            this.addListProductCart();
+         })
    }
    //----Метод рендеринга списка товаров в корзине-----
-   renderPageCart() {
-      let listProductCartHtml = '';
-      this.products.forEach(product => {
-         const goodItem = new GoodsItemCart(product.id, product.title, product.price, product.color, product.size);
-         listProductCartHtml += goodItem.renderProductCart();
-      });
-      document.querySelector('.shopping__grid-wrap').innerHTML = listProductCartHtml;
+   renderPageCart(id) {
+      let product = this.products[id - 1];
+      const goodItem = new GoodsItemCart(product.id_product, product.title, product.price, product.color, product.size);
+      document.querySelector('.shopping__grid-wrap').insertAdjacentHTML('beforeend', goodItem.renderProductCart())
    }
    //-----Метод подсчёта общей суммы всех товаров в каталоге----
    sumCount() {
@@ -151,13 +151,31 @@ class ProductsCart {
    }
    //-----Метод добавления карточки----
    addListProductCart() {
+      let addCartCard = document.getElementsByClassName("card-hover");//Кнопки добавить в корзину товар
+      for (let add of addCartCard) {
+         add.addEventListener('click', () => {
+            this.renderPageCart(add.dataset.btnCartAdd);
+             this.removeListProductCart();
+         })
+      }
+     
    }
    //-----Метод удаления карточки------
    removeListProductCart() {
+      let closeCartCard = document.getElementsByClassName("shopping-card__close");//Кнопки удалееия карточки
+      for (let item of closeCartCard) {
+         item.onclick = () => {
+            console.log(item.dataset.btnCartClose );
+            let productCart = document.getElementById(item.dataset.btnCartClose + '-p-cart');
+            productCart.remove();
+         }
+      }
    }
 }
 const listProductCart = new ProductsCart();
 listProductCart.fetchProducts();
-listProductCart.renderPageCart();
 listProductCart.sumCount();
+
+
+
 

@@ -1,0 +1,100 @@
+// header
+.header {
+   background: $black;
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   &__wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 75px;
+   }
+   // left container
+   &__left {
+      width: 111px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+   }
+   &-left__search {
+      cursor: pointer;
+   }
+   // right container
+   &-right {
+      &__menu {
+         display: inline-block;
+         position: relative;
+      }
+      &__drop {
+         display: none;
+         height: 764px;
+         width: 232px;
+         position: absolute;
+         right: 0;
+         z-index: 50;
+         background: $white;
+         box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+      }
+      &__burgermenu {
+         cursor: pointer;
+      }
+      &__account {
+         margin: 0 33px;
+      }
+      &__cart {
+         position: relative;
+         background: none;
+      }
+      &-cart__count {
+         position: absolute;
+         top: -15px;
+         left: 22px;
+         @include fontstyle(regular, 0, none);
+         font-size: 12px;
+         color: $white;
+         line-height: 14px;
+         padding: 5px 8px;
+         background: $bittersweet;
+         border-radius: 50%;
+      }
+   }
+}
+
+// drop burger-menu
+.header {
+   &-drop {
+      &__close {
+         text-align: right;
+         padding: 16px 16px 8px;
+      }
+      &__list {
+         padding-left: 34px;
+      }
+      &__text {
+         @include fontstyle(semibold, text, upper);
+         padding-left: 34px;
+         padding-bottom: 24px;
+      }
+      &__sub-item {
+         display: flex;
+         flex-direction: column;
+         padding-left: 20px;
+      }
+      &__item {
+         &-title {
+            @include fontstyle(regular, text, upper);
+            color: $bittersweet;
+         }
+         &-link {
+            @include fontstyle(regular, text, none);
+            color: $dimgray;
+            line-height: 33px;
+         }
+      }
+   }
+   .burger__media {
+      display: none;
+      line-height: 25px;
+   }
+}
