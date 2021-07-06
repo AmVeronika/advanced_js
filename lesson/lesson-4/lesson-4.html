@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+   <h1 style="text-align: center;">Регулярные выражения</h1>
+   <section style="display: flex; justify-content: space-between; width: 1200px; margin: 0 auto;">
+      <div class="left" style="border: 1px solid grey; width: 550px;">
+         <p class="quote-original" style="border: 1px solid red; padding: 10px;">'I don't feel well', said Mr Nash.
+            <br><br>
+            'Я не очень хорошо себя чувствую', сказал господин Нэш.
+         </p>
+         <p class="quote-original" style="border: 1px solid red; padding: 10px;">'I don't care what you think about me.
+            I don't think about you at all.'
+            <br><br>
+            'Я не забочусь о том, что вы обо мне думаете, я о вас не думаю вообще'. Коко Шанель
+         </p>
+      </div>
+      <div class="right" style="border: 1px solid grey; width: 550px;">
+         <p class="quote-corrected" style="border: 1px solid red; padding: 10px;"></p>
+         <p class="quote-corrected" style="border: 1px solid red; padding: 10px;"></p>
+      </div>
+   </section>
+   <h2 style="text-align: center;">Форма заполнения</h2>
+   <form action="#" style="display: flex; justify-content: space-between; width: 1200px; margin: 0 auto;">
+      <input type="text" name="firstname" id="1" placeholder="firstname">
+      <input type="text" name="tel" id="2" placeholder="tel">
+      <input type="text" name="email" id="3" placeholder="email">
+      <textarea name="text" id="4" cols="30" rows="10" placeholder="text"></textarea>
+      <button type="button" id="button">Отправить</button>
+   </form>
+   <!-- JS -->
+   <script>
+      // 1 и 2 Задания 
+      let quoteOriginal = document.getElementsByClassName('quote-original');
+      let quoteCorrected = document.getElementsByClassName('quote-corrected');
+
+      function quotesOriginal() {
+         let a;
+         for (let i = 0; i < quoteOriginal.length; i++) {
+            let regexp = /(^')|('$)|('\s)|('\.)|(',)/gmu;  //Не нашла решения заменить ' рядом с . и , без удаления этих символов
+            a = quoteOriginal[i].innerText.replace(regexp, '"');
+            quoteCorrected[i].innerText = a;
+         }
+      }
+      quotesOriginal();
+      // 3 задание
+      let inputFirstname = document.getElementById('1');
+      let inputTel = document.getElementById('2');
+      let inputEmail = document.getElementById('3');
+      let inputText = document.getElementById('4');
+      let button = document.getElementById('button');
+
+      button.onclick = () => {
+         check(inputFirstname, /^[a-zа-яё]+$/iu);
+         check(inputTel, /^\+?[\d]{1}\(?[\d]{3}\)?[\d]{3}-?[\d]{4}$/);
+         check(inputEmail, /^([a-z\d\.-_]+)@([a-z\d_\.-]+)\.([a-z\d]{2,5})$/i);
+      }
+      function check(name, regexp) {
+         name.style.outline="none";
+         if(!regexp.test(name.value)) {
+            name.style.outline="1px solid red";
+            console.log(name)
+            name.value="Введите корректно данные";
+         } 
+
+      }
+
+
+   </script>
+</body>
+
+</html>
