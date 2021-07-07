@@ -44,7 +44,7 @@
       function quotesOriginal() {
          let a;
          for (let i = 0; i < quoteOriginal.length; i++) {
-            let regexp = /(^')|('$)|'(?=[\s\.,])/gmu;  
+            let regexp = /(^')|('$)|'(?=[\s\.,])/gmu;  // Добавила (?=) Lookaround Позиционную проверку, чтобы менялись кавычки которые идут за точкой или за запятой (Иначе меняются кавычка и след символ, которые я прописывала)
             a = quoteOriginal[i].innerText.replace(regexp, '"');
             quoteCorrected[i].innerText = a;
          }
@@ -59,15 +59,16 @@
 
       button.onclick = () => {
          check(inputFirstname, /^[a-zа-яё]+$/iu);
-         check(inputTel, /^\+?[\d]{1}\(?[\d]{3}\)?[\d]{3}-?[\d]{4}$/);
+         check(inputTel, /\B'|'\B/);//Нашла новый более доступный и упрощённый вариант
+         // check(inputTel, /^\+?[\d]{1}\(?[\d]{3}\)?[\d]{3}-?[\d]{4}$/); //Добавила проверку номера с учетом того, что (+), скобочки, тире могут быть, а могут и не быть (т.к. люди поразному вводят номера)
          check(inputEmail, /^([a-z\d\.-_]+)@([a-z\d_\.-]+)\.([a-z\d]{2,5})$/i);
       }
       function check(name, regexp) {
-         name.style.outline="none";
-         if(!regexp.test(name.value)) {
-            name.style.outline="1px solid red";
-            name.value="Введите корректно данные";
-         } 
+         name.style.outline = "none";
+         if (!regexp.test(name.value)) {
+            name.style.outline = "1px solid red";
+            name.value = "Введите корректно данные";
+         }
 
       }
 
