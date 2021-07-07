@@ -10,7 +10,7 @@
 
 <body>
    <h1 style="text-align: center;">Регулярные выражения</h1>
-   <section style="display: flex; justify-content: space-between; width: 1200px; margin: 0 auto;">
+   <section style="display: flex; justify-content: space-between; width: 1200px; margin: 0 auto; font-size: 26px;">
       <div class="left" style="border: 1px solid grey; width: 550px;">
          <p class="quote-original" style="border: 1px solid red; padding: 10px;">'I don't feel well', said Mr Nash.
             <br><br>
@@ -44,7 +44,7 @@
       function quotesOriginal() {
          let a;
          for (let i = 0; i < quoteOriginal.length; i++) {
-            let regexp = /(^')|('$)|('\s)|('\.)|(',)/gmu;  //Не нашла решения заменить ' рядом с . и , без удаления этих символов
+            let regexp = /(^')|('$)|'(?=[\s\.,])/gmu;  
             a = quoteOriginal[i].innerText.replace(regexp, '"');
             quoteCorrected[i].innerText = a;
          }
@@ -66,7 +66,6 @@
          name.style.outline="none";
          if(!regexp.test(name.value)) {
             name.style.outline="1px solid red";
-            console.log(name)
             name.value="Введите корректно данные";
          } 
 

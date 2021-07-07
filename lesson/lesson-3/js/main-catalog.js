@@ -62,7 +62,7 @@ class ProductsCatalog {
    fetchProducts() {
       makeGETRequest('json/catalogData.json')// в makeGETRequest передали адресс json, получили промис 
          .then(data => {
-            this.products = data;
+            this.products = [...data];
             this.renderPageCatalog();
          })
    }
