@@ -1586,7 +1586,6 @@ body {
 }
 
 .cart {
-  display: none;
   position: fixed;
   top: 75px;
   left: 50%;

@@ -6,8 +6,10 @@ const app = new Vue({
    el: '#app',
    data: {
       products: [], //Массив объектов JSON (исходный список товаров в каталоге)
+      cartProducts: [],// Массив карточек в корзине
       searchLine: '', //содержимое поля поиска
       API_URL: 'https://raw.githubusercontent.com/AmVeronika/JSON-EBT/master/json',//создание адреса сервера, к которому обращается клиент
+      showCart: false //Открытие/скрытие корзины
    },
    methods: {
       makeGETRequest() { //Запрос списка товаров
@@ -20,6 +22,9 @@ const app = new Vue({
       },
       fhfhfh() {
          console.log(this.products)
+      },
+      addListProductCart() {
+         console.log(event.target.dataset)
       }
    },
 

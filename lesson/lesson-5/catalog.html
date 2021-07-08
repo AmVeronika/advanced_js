@@ -23,7 +23,7 @@
                   <img class="header-left-logo__img" src="img/header-footer/logo.png" width="44" height="38"
                      alt="logo BRAND">
                </a>
-               <input class="header-left__search-input" type="search">
+               <input v-model="searchLine" class="header-left__search-input" type="search">
                <svg class="header-left__search item trans" width="27" height="28" viewBox="0 0 27 28" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -50,7 +50,7 @@
                   </svg>
                </a>
                <!-- cart  -->
-               <button class="header-right__cart" type="button">
+               <button class="header-right__cart" type="button" v-on:click="showCart=!showCart">
                   <svg class="header-right-cart__img item trans" width="32" height="29" viewBox="0 0 32 29" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                      <path
@@ -252,7 +252,7 @@
                      <p class="product-card__text">{{product.descp}}</p>
                      <p class="product-card__text-options">${{product.price}}</p>
                   </a>
-                  <button class="card-hover button-hover4 trans1" :data-btn-cart-add="product.id_product">
+                  <button class="card-hover button-hover4 trans1" v-on:click="addListProductCart()" :data-btncart-add="product.id_product">
                      <svg class="card-hover__img trans" width="26" height="24" viewBox="0 0 32 29" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path class="trans"
@@ -348,14 +348,36 @@
          </aside> <!-- Feature end -->
       </main> <!-- Main  end-->
       <!-- Cart  -->
-      <div class="cart">
+      <div class="cart" v-show="showCart">
          <!-- Shopping cart -->
          <section class="shopping container">
             <div class="shopping__wrap">
                <!-- Cards container  -->
                <div class="shopping__grid-wrap">
-                  <!-- Card - 1 -->
-                  <!-- Card - 2 -->
+                  <!-- Cards -->
+                  <!-- <div class="shopping__card shadow" v-for="cartProduct in cartProducts" id="${this.id}-p-cart">
+                     <a href="product.html" class="shopping-card__link">
+                        <img class="shopping-card__img  scale trans" src="img/catalog/product-card${this.id}.jpg" width="262"
+                           height="100%" alt="product">
+                     </a>
+                     <div class="shopping-card__name">
+                        <h3 class="shopping-name__h3">${this.title}</h3>
+                        <p class="shopping-card__text">Price: <span class="shopping-card__text-color">$${this.price}</span></p>
+                        <p class="shopping-card__text">Color: <span class="shopping-card__text-span">${this.color}</span></p>
+                        <p class="shopping-card__text">Size: <span class="shopping-card__text-span">${this.size}</span></p>
+                        <p class="shopping-card__text shopping-card__text-block">Quantity: </p>
+                        <input class="shopping-card__input input-hover " type="number" name="quantity" required min="0"
+                           value="1" data-quantity-product="${this.id}" id="${this.id}-quantity-product">
+                     </div> -->
+                     <!-- close button -->
+                     <!-- <button type="submit" class="shopping-card__close" data-btn-cart-close="${this.id}">
+                        <svg class="shopping-card__close-svg close trans" width="18" height="18" viewBox="0 0 18 18"
+                           fill="#575757" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              d="M11.2453 9L17.5302 2.71516C17.8285 2.41741 17.9962 2.01336 17.9966 1.59191C17.997 1.17045 17.8299 0.76611 17.5322 0.467833C17.2344 0.169555 16.8304 0.00177586 16.4089 0.00140366C15.9875 0.00103146 15.5831 0.168097 15.2848 0.465848L9 6.75069L2.71516 0.465848C2.41688 0.167571 2.01233 0 1.5905 0C1.16868 0 0.764125 0.167571 0.465848 0.465848C0.167571 0.764125 0 1.16868 0 1.5905C0 2.01233 0.167571 2.41688 0.465848 2.71516L6.75069 9L0.465848 15.2848C0.167571 15.5831 0 15.9877 0 16.4095C0 16.8313 0.167571 17.2359 0.465848 17.5342C0.764125 17.8324 1.16868 18 1.5905 18C2.01233 18 2.41688 17.8324 2.71516 17.5342L9 11.2493L15.2848 17.5342C15.5831 17.8324 15.9877 18 16.4095 18C16.8313 18 17.2359 17.8324 17.5342 17.5342C17.8324 17.2359 18 16.8313 18 16.4095C18 15.9877 17.8324 15.5831 17.5342 15.2848L11.2453 9Z" />
+                         </svg>
+                      </button>
+                   </div> -->
                </div>
             </div>
             <!-- Form container -->
@@ -450,7 +472,7 @@
    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> <!-- Подключили vue -->
    <script src="js\vue-script.js"></script>
    <!-- <script src="js/main-catalog.js"></script> -->
-   <!-- <script src="js/script.js"></script> -->
+   <script src="js/script.js"></script>
 </body>
 
 </html>

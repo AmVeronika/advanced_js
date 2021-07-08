@@ -27,10 +27,7 @@ filter.addEventListener("click", () => {
 });
 
 
-// Открытие/закрытие модального окна при нажатии на корзину
-cartButtonOpen.addEventListener('click', () => {
-   document.querySelector('.cart').classList.toggle('cart-active');
-})
+
 // закрытие модального окна при нажатии на ESC
 window.onkeydown = (evt) => {
    if (evt.keyCode == 27) {

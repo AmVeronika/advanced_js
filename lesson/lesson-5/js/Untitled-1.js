@@ -3,6 +3,4 @@
 // 2. Добавить корзину. В html-шаблон добавить разметку корзины. Добавить в объект данных поле isVisibleCart, управляющее видимостью корзины.
 
 // 3. *Добавлять в .goods-list заглушку с текстом «Нет данных» в случае, если список товаров пуст.
-let searchLine =  document.querySelector('.header-left__search-input');  //Поле поиска товаров по списку
-let serchButton = document.querySelector('.header-left__search');  //Кнопка поиска товаров по списку
 
