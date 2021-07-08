@@ -12,416 +12,445 @@
    <script src="https://kit.fontawesome.com/339d5aa3dd.js" crossorigin="anonymous"></script>
 </head>
 
-<body id="app">
-
-   <!-- Header  -->
-   <header class="header">
-      <div class="container header__wrap">
-         <!-- left container -->
-         <div class="header__left">
-            <a class="header-left__logo" href="index.html">
-               <img class="header-left-logo__img" src="img/header-footer/logo.png" width="44" height="38"
-                  alt="logo BRAND">
-            </a>
-            <input class="header-left__search-input" type="search">
-            <svg class="header-left__search item trans" width="27" height="28" viewBox="0 0 27 28" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-               <path
-                  d="M18.6909 17.2882L18.3694 17.6394L18.7043 17.9777L26.3703 25.7206C26.4533 25.8081 26.4997 25.9242 26.4997 26.0449C26.4997 26.1666 26.4526 26.2836 26.3682 26.3714L26.3682 26.3713L26.3636 26.3762C26.326 26.4164 26.2806 26.4483 26.2301 26.4701C26.1801 26.4917 26.1262 26.5029 26.0717 26.5029C26.0154 26.5022 25.9598 26.4903 25.9081 26.468C25.8559 26.4454 25.8087 26.4127 25.7693 26.3716L25.7694 26.3716L25.7635 26.3657L18.0155 18.5587L17.7076 18.2484L17.3589 18.5122C15.6498 19.8054 13.5645 20.5038 11.4213 20.5009L11.4193 20.5009C9.1476 20.5069 6.94301 19.7311 5.17574 18.3037C3.40848 16.8764 2.18617 14.8844 1.71408 12.6622C1.24199 10.4401 1.54888 8.12325 2.5832 6.10068C3.61753 4.0781 5.3163 2.47301 7.39423 1.55496C9.47217 0.636901 11.8027 0.461789 13.9945 1.05903C16.1863 1.65627 18.1058 2.98949 19.4308 4.8348C20.7557 6.6801 21.4054 8.92511 21.2706 11.1928C21.1359 13.4605 20.225 15.6128 18.6909 17.2882ZM11.4182 19.6009H11.4206C13.2046 19.6011 14.9488 19.073 16.4332 18.0834C17.9176 17.0938 19.0758 15.6868 19.7618 14.0399C20.4478 12.393 20.6308 10.5799 20.2879 8.82907C19.9449 7.07828 19.0913 5.46822 17.8346 4.20185C16.578 2.93548 14.9746 2.0695 13.2265 1.71306C11.4784 1.35663 9.66389 1.5257 8.01175 2.19897C6.35961 2.87224 4.94377 4.01956 3.94272 5.4963C2.94167 6.97304 2.40023 8.71309 2.38664 10.4971L2.88662 10.5009L2.38663 10.4994C2.37959 12.9034 3.32665 15.2119 5.01992 16.9182C6.7132 18.6246 9.01433 19.5894 11.4182 19.6009Z"
-                  fill="#E8E8E8" stroke="white" />
-            </svg>
-         </div>
-         <!-- right container  -->
-         <div class="header__right">
-            <!-- burger-menu  -->
-            <div id="menu" class="header-right__menu">
-               <svg class="header-right__burgermenu item trans" width="32" height="23" viewBox="0 0 32 23" fill="none"
+<body>
+   <div id="app">
+      <!-- Header  -->
+      <header class="header">
+         <div class="container header__wrap">
+            <!-- left container -->
+            <div class="header__left">
+               <a class="header-left__logo" href="index.html">
+                  <img class="header-left-logo__img" src="img/header-footer/logo.png" width="44" height="38"
+                     alt="logo BRAND">
+               </a>
+               <input class="header-left__search-input" type="search">
+               <svg class="header-left__search item trans" width="27" height="28" viewBox="0 0 27 28" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 23V20.31H32V23H0ZM0 12.76V10.07H32V12.76H0ZM0 2.69V0H32V2.69H0Z" fill="#E8E8E8" />
+                  <path
+                     d="M18.6909 17.2882L18.3694 17.6394L18.7043 17.9777L26.3703 25.7206C26.4533 25.8081 26.4997 25.9242 26.4997 26.0449C26.4997 26.1666 26.4526 26.2836 26.3682 26.3714L26.3682 26.3713L26.3636 26.3762C26.326 26.4164 26.2806 26.4483 26.2301 26.4701C26.1801 26.4917 26.1262 26.5029 26.0717 26.5029C26.0154 26.5022 25.9598 26.4903 25.9081 26.468C25.8559 26.4454 25.8087 26.4127 25.7693 26.3716L25.7694 26.3716L25.7635 26.3657L18.0155 18.5587L17.7076 18.2484L17.3589 18.5122C15.6498 19.8054 13.5645 20.5038 11.4213 20.5009L11.4193 20.5009C9.1476 20.5069 6.94301 19.7311 5.17574 18.3037C3.40848 16.8764 2.18617 14.8844 1.71408 12.6622C1.24199 10.4401 1.54888 8.12325 2.5832 6.10068C3.61753 4.0781 5.3163 2.47301 7.39423 1.55496C9.47217 0.636901 11.8027 0.461789 13.9945 1.05903C16.1863 1.65627 18.1058 2.98949 19.4308 4.8348C20.7557 6.6801 21.4054 8.92511 21.2706 11.1928C21.1359 13.4605 20.225 15.6128 18.6909 17.2882ZM11.4182 19.6009H11.4206C13.2046 19.6011 14.9488 19.073 16.4332 18.0834C17.9176 17.0938 19.0758 15.6868 19.7618 14.0399C20.4478 12.393 20.6308 10.5799 20.2879 8.82907C19.9449 7.07828 19.0913 5.46822 17.8346 4.20185C16.578 2.93548 14.9746 2.0695 13.2265 1.71306C11.4784 1.35663 9.66389 1.5257 8.01175 2.19897C6.35961 2.87224 4.94377 4.01956 3.94272 5.4963C2.94167 6.97304 2.40023 8.71309 2.38664 10.4971L2.88662 10.5009L2.38663 10.4994C2.37959 12.9034 3.32665 15.2119 5.01992 16.9182C6.7132 18.6246 9.01433 19.5894 11.4182 19.6009Z"
+                     fill="#E8E8E8" stroke="white" />
                </svg>
             </div>
-            <!-- account  -->
-            <a class="header-right__account" href="registration.html">
-               <svg class="header-right-account__img item trans" width="29" height="29" viewBox="0 0 29 29" fill="none"
+            <!-- right container  -->
+            <div class="header__right">
+               <!-- burger-menu  -->
+               <div id="menu" class="header-right__menu">
+                  <svg class="header-right__burgermenu item trans" width="32" height="23" viewBox="0 0 32 23"
+                     fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M0 23V20.31H32V23H0ZM0 12.76V10.07H32V12.76H0ZM0 2.69V0H32V2.69H0Z" fill="#E8E8E8" />
+                  </svg>
+               </div>
+               <!-- account  -->
+               <a class="header-right__account" href="registration.html">
+                  <svg class="header-right-account__img item trans" width="29" height="29" viewBox="0 0 29 29"
+                     fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M14.5 19.937C19 19.937 22.656 15.464 22.656 9.968C22.656 4.472 19 0 14.5 0C13.3631 0.0217413 12.2463 0.303398 11.2351 0.823397C10.2239 1.34339 9.34507 2.08794 8.66602 3C7.12663 4.99573 6.30819 7.45381 6.34399 9.974C6.34399 15.465 10 19.937 14.5 19.937ZM14.5 1.813C18 1.813 20.844 5.472 20.844 9.969C20.844 14.466 17.998 18.125 14.5 18.125C11.002 18.125 8.15603 14.465 8.15503 9.969C8.15403 5.473 11 1.813 14.5 1.813ZM20.844 18.125C20.6036 18.125 20.373 18.2205 20.203 18.3905C20.033 18.5605 19.9375 18.7911 19.9375 19.0315C19.9375 19.2719 20.033 19.5025 20.203 19.6725C20.373 19.8425 20.6036 19.938 20.844 19.938C22.526 19.9399 24.1386 20.6088 25.3279 21.7982C26.5172 22.9875 27.1861 24.6 27.188 26.282C27.1875 26.5221 27.0918 26.7523 26.922 26.9221C26.7522 27.0918 26.5221 27.1875 26.282 27.188H2.71997C2.47985 27.1875 2.24975 27.0918 2.07996 26.9221C1.91016 26.7523 1.81449 26.5221 1.81396 26.282C1.81608 24.6001 2.48517 22.9877 3.67444 21.7985C4.86371 20.6092 6.47608 19.9401 8.15796 19.938C8.39824 19.938 8.62868 19.8425 8.79858 19.6726C8.96849 19.5027 9.06396 19.2723 9.06396 19.032C9.06396 18.7917 8.96849 18.5613 8.79858 18.3914C8.62868 18.2215 8.39824 18.126 8.15796 18.126C5.99541 18.1279 3.92201 18.9875 2.39258 20.5164C0.863144 22.0453 0.00264777 24.1185 0 26.281C0.000794067 27.0019 0.287502 27.693 0.797241 28.2027C1.30698 28.7125 1.99811 28.9992 2.71899 29H26.282C27.0027 28.9989 27.6936 28.7121 28.2031 28.2024C28.7126 27.6927 28.9992 27.0017 29 26.281C28.9974 24.1187 28.1372 22.0457 26.6083 20.5168C25.0793 18.9878 23.0063 18.1276 20.844 18.125Z"
+                        fill="#E8E8E8" />
+                  </svg>
+               </a>
+               <!-- cart  -->
+               <button class="header-right__cart" type="button">
+                  <svg class="header-right-cart__img item trans" width="32" height="29" viewBox="0 0 32 29" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M26.2009 29C25.5532 28.9738 24.9415 28.6948 24.4972 28.2227C24.0529 27.7506 23.8114 27.1232 23.8245 26.475C23.8376 25.8269 24.1043 25.2097 24.5673 24.7559C25.0303 24.3022 25.6527 24.048 26.301 24.048C26.9493 24.048 27.5717 24.3022 28.0347 24.7559C28.4977 25.2097 28.7644 25.8269 28.7775 26.475C28.7906 27.1232 28.549 27.7506 28.1047 28.2227C27.6604 28.6948 27.0488 28.9738 26.401 29H26.2009ZM6.75293 26.32C6.75293 25.79 6.91011 25.2718 7.20459 24.8311C7.49907 24.3904 7.91764 24.0469 8.40735 23.844C8.89705 23.6412 9.43594 23.5881 9.95581 23.6915C10.4757 23.7949 10.9532 24.0502 11.328 24.425C11.7028 24.7998 11.9581 25.2773 12.0615 25.7972C12.1649 26.317 12.1118 26.8559 11.9089 27.3456C11.7061 27.8353 11.3626 28.2539 10.9219 28.5483C10.4812 28.8428 9.96304 29 9.43298 29C9.08087 29.0003 8.73212 28.9311 8.40674 28.7966C8.08136 28.662 7.78569 28.4646 7.53662 28.2158C7.28755 27.9669 7.09001 27.6713 6.9552 27.3461C6.82039 27.0208 6.75098 26.6721 6.75098 26.32H6.75293ZM10.553 20.686C10.2935 20.6868 10.0409 20.6024 9.83411 20.4457C9.62727 20.2891 9.47758 20.0689 9.40796 19.819L4.57495 2.36401H1.18201C0.868521 2.36401 0.567859 2.23947 0.346191 2.01781C0.124523 1.79614 0 1.49549 0 1.18201C0 0.868519 0.124523 0.567873 0.346191 0.346205C0.567859 0.124537 0.868521 5.81268e-06 1.18201 5.81268e-06H5.46301C5.7225 -0.00080736 5.97504 0.0837201 6.18176 0.240568C6.38848 0.397416 6.53784 0.617884 6.60693 0.868006L11.4399 18.323H24.6179L29.001 8.27501H14.401C14.2428 8.27961 14.0854 8.25242 13.9379 8.19507C13.7904 8.13771 13.6559 8.05134 13.5424 7.94108C13.4288 7.83082 13.3386 7.69891 13.277 7.55315C13.2154 7.40739 13.1836 7.25075 13.1836 7.0925C13.1836 6.93426 13.2154 6.77762 13.277 6.63186C13.3386 6.4861 13.4288 6.35419 13.5424 6.24393C13.6559 6.13367 13.7904 6.0473 13.9379 5.98994C14.0854 5.93259 14.2428 5.90541 14.401 5.91001H30.814C31.0097 5.90996 31.2022 5.95866 31.3744 6.05172C31.5465 6.14478 31.6928 6.27926 31.7999 6.44301C31.9078 6.60729 31.9734 6.79569 31.9908 6.99145C32.0083 7.18721 31.9771 7.38424 31.9 7.565L26.495 19.977C26.4026 20.1876 26.251 20.3668 26.0585 20.4927C25.866 20.6186 25.641 20.6858 25.411 20.686H10.553Z"
+                        fill="#E8E8E8" />
+                  </svg>
+                  <p class="header-right-cart__count">1</p>
+               </button>
+            </div>
+         </div>
+         <!-- drop burger-menu -->
+         <nav class="header-right__drop" id="dropMenu">
+            <!-- close button -->
+            <div class="header-drop__close" id="close">
+               <svg class="header-drop__close-button close" width="12" height="12" viewBox="0 0 18 18" fill="#575757"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
-                     d="M14.5 19.937C19 19.937 22.656 15.464 22.656 9.968C22.656 4.472 19 0 14.5 0C13.3631 0.0217413 12.2463 0.303398 11.2351 0.823397C10.2239 1.34339 9.34507 2.08794 8.66602 3C7.12663 4.99573 6.30819 7.45381 6.34399 9.974C6.34399 15.465 10 19.937 14.5 19.937ZM14.5 1.813C18 1.813 20.844 5.472 20.844 9.969C20.844 14.466 17.998 18.125 14.5 18.125C11.002 18.125 8.15603 14.465 8.15503 9.969C8.15403 5.473 11 1.813 14.5 1.813ZM20.844 18.125C20.6036 18.125 20.373 18.2205 20.203 18.3905C20.033 18.5605 19.9375 18.7911 19.9375 19.0315C19.9375 19.2719 20.033 19.5025 20.203 19.6725C20.373 19.8425 20.6036 19.938 20.844 19.938C22.526 19.9399 24.1386 20.6088 25.3279 21.7982C26.5172 22.9875 27.1861 24.6 27.188 26.282C27.1875 26.5221 27.0918 26.7523 26.922 26.9221C26.7522 27.0918 26.5221 27.1875 26.282 27.188H2.71997C2.47985 27.1875 2.24975 27.0918 2.07996 26.9221C1.91016 26.7523 1.81449 26.5221 1.81396 26.282C1.81608 24.6001 2.48517 22.9877 3.67444 21.7985C4.86371 20.6092 6.47608 19.9401 8.15796 19.938C8.39824 19.938 8.62868 19.8425 8.79858 19.6726C8.96849 19.5027 9.06396 19.2723 9.06396 19.032C9.06396 18.7917 8.96849 18.5613 8.79858 18.3914C8.62868 18.2215 8.39824 18.126 8.15796 18.126C5.99541 18.1279 3.92201 18.9875 2.39258 20.5164C0.863144 22.0453 0.00264777 24.1185 0 26.281C0.000794067 27.0019 0.287502 27.693 0.797241 28.2027C1.30698 28.7125 1.99811 28.9992 2.71899 29H26.282C27.0027 28.9989 27.6936 28.7121 28.2031 28.2024C28.7126 27.6927 28.9992 27.0017 29 26.281C28.9974 24.1187 28.1372 22.0457 26.6083 20.5168C25.0793 18.9878 23.0063 18.1276 20.844 18.125Z"
-                     fill="#E8E8E8" />
+                     d="M11.2453 9L17.5302 2.71516C17.8285 2.41741 17.9962 2.01336 17.9966 1.59191C17.997 1.17045 17.8299 0.76611 17.5322 0.467833C17.2344 0.169555 16.8304 0.00177586 16.4089 0.00140366C15.9875 0.00103146 15.5831 0.168097 15.2848 0.465848L9 6.75069L2.71516 0.465848C2.41688 0.167571 2.01233 0 1.5905 0C1.16868 0 0.764125 0.167571 0.465848 0.465848C0.167571 0.764125 0 1.16868 0 1.5905C0 2.01233 0.167571 2.41688 0.465848 2.71516L6.75069 9L0.465848 15.2848C0.167571 15.5831 0 15.9877 0 16.4095C0 16.8313 0.167571 17.2359 0.465848 17.5342C0.764125 17.8324 1.16868 18 1.5905 18C2.01233 18 2.41688 17.8324 2.71516 17.5342L9 11.2493L15.2848 17.5342C15.5831 17.8324 15.9877 18 16.4095 18C16.8313 18 17.2359 17.8324 17.5342 17.5342C17.8324 17.2359 18 16.8313 18 16.4095C18 15.9877 17.8324 15.5831 17.5342 15.2848L11.2453 9Z" />
                </svg>
-            </a>
-            <!-- cart  -->
-            <button class="header-right__cart" type="button">
-               <svg class="header-right-cart__img item trans" width="32" height="29" viewBox="0 0 32 29" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                     d="M26.2009 29C25.5532 28.9738 24.9415 28.6948 24.4972 28.2227C24.0529 27.7506 23.8114 27.1232 23.8245 26.475C23.8376 25.8269 24.1043 25.2097 24.5673 24.7559C25.0303 24.3022 25.6527 24.048 26.301 24.048C26.9493 24.048 27.5717 24.3022 28.0347 24.7559C28.4977 25.2097 28.7644 25.8269 28.7775 26.475C28.7906 27.1232 28.549 27.7506 28.1047 28.2227C27.6604 28.6948 27.0488 28.9738 26.401 29H26.2009ZM6.75293 26.32C6.75293 25.79 6.91011 25.2718 7.20459 24.8311C7.49907 24.3904 7.91764 24.0469 8.40735 23.844C8.89705 23.6412 9.43594 23.5881 9.95581 23.6915C10.4757 23.7949 10.9532 24.0502 11.328 24.425C11.7028 24.7998 11.9581 25.2773 12.0615 25.7972C12.1649 26.317 12.1118 26.8559 11.9089 27.3456C11.7061 27.8353 11.3626 28.2539 10.9219 28.5483C10.4812 28.8428 9.96304 29 9.43298 29C9.08087 29.0003 8.73212 28.9311 8.40674 28.7966C8.08136 28.662 7.78569 28.4646 7.53662 28.2158C7.28755 27.9669 7.09001 27.6713 6.9552 27.3461C6.82039 27.0208 6.75098 26.6721 6.75098 26.32H6.75293ZM10.553 20.686C10.2935 20.6868 10.0409 20.6024 9.83411 20.4457C9.62727 20.2891 9.47758 20.0689 9.40796 19.819L4.57495 2.36401H1.18201C0.868521 2.36401 0.567859 2.23947 0.346191 2.01781C0.124523 1.79614 0 1.49549 0 1.18201C0 0.868519 0.124523 0.567873 0.346191 0.346205C0.567859 0.124537 0.868521 5.81268e-06 1.18201 5.81268e-06H5.46301C5.7225 -0.00080736 5.97504 0.0837201 6.18176 0.240568C6.38848 0.397416 6.53784 0.617884 6.60693 0.868006L11.4399 18.323H24.6179L29.001 8.27501H14.401C14.2428 8.27961 14.0854 8.25242 13.9379 8.19507C13.7904 8.13771 13.6559 8.05134 13.5424 7.94108C13.4288 7.83082 13.3386 7.69891 13.277 7.55315C13.2154 7.40739 13.1836 7.25075 13.1836 7.0925C13.1836 6.93426 13.2154 6.77762 13.277 6.63186C13.3386 6.4861 13.4288 6.35419 13.5424 6.24393C13.6559 6.13367 13.7904 6.0473 13.9379 5.98994C14.0854 5.93259 14.2428 5.90541 14.401 5.91001H30.814C31.0097 5.90996 31.2022 5.95866 31.3744 6.05172C31.5465 6.14478 31.6928 6.27926 31.7999 6.44301C31.9078 6.60729 31.9734 6.79569 31.9908 6.99145C32.0083 7.18721 31.9771 7.38424 31.9 7.565L26.495 19.977C26.4026 20.1876 26.251 20.3668 26.0585 20.4927C25.866 20.6186 25.641 20.6858 25.411 20.686H10.553Z"
-                     fill="#E8E8E8" />
-               </svg>
-               <p class="header-right-cart__count">1</p>
-            </button>
-         </div>
-      </div>
-      <!-- drop burger-menu -->
-      <nav class="header-right__drop" id="dropMenu">
-         <!-- close button -->
-         <div class="header-drop__close" id="close">
-            <svg class="header-drop__close-button close" width="12" height="12" viewBox="0 0 18 18" fill="#575757"
-               xmlns="http://www.w3.org/2000/svg">
-               <path
-                  d="M11.2453 9L17.5302 2.71516C17.8285 2.41741 17.9962 2.01336 17.9966 1.59191C17.997 1.17045 17.8299 0.76611 17.5322 0.467833C17.2344 0.169555 16.8304 0.00177586 16.4089 0.00140366C15.9875 0.00103146 15.5831 0.168097 15.2848 0.465848L9 6.75069L2.71516 0.465848C2.41688 0.167571 2.01233 0 1.5905 0C1.16868 0 0.764125 0.167571 0.465848 0.465848C0.167571 0.764125 0 1.16868 0 1.5905C0 2.01233 0.167571 2.41688 0.465848 2.71516L6.75069 9L0.465848 15.2848C0.167571 15.5831 0 15.9877 0 16.4095C0 16.8313 0.167571 17.2359 0.465848 17.5342C0.764125 17.8324 1.16868 18 1.5905 18C2.01233 18 2.41688 17.8324 2.71516 17.5342L9 11.2493L15.2848 17.5342C15.5831 17.8324 15.9877 18 16.4095 18C16.8313 18 17.2359 17.8324 17.5342 17.5342C17.8324 17.2359 18 16.8313 18 16.4095C18 15.9877 17.8324 15.5831 17.5342 15.2848L11.2453 9Z" />
-            </svg>
-         </div>
-         <p class="header-drop__text">MENU</p>
-         <ul class="header-drop__list">
-            <li class="header-drop__item">
-               <a href="catalog.html" class="header-drop__item-title menu-title-hover trans">MAN</a>
-            </li>
-            <li class="header-drop__sub-item">
-               <a href="#" class="header-drop__item-link link-hover trans">Accessories</a>
-               <a href="#" class="header-drop__item-link link-hover trans">Bags</a>
-               <a href="#" class="header-drop__item-link link-hover trans">Denim</a>
-               <a href="#" class="header-drop__item-link link-hover trans">T-Shirts</a>
-            </li>
-            <li class="header-drop__item">
-               <a href="#" class="header-drop__item-title menu-title-hover trans">WOMAN</a>
-            </li>
-            <li class="header-drop__sub-item">
-               <a href="#" class="header-drop__item-link link-hover trans">Accessories</a>
-               <a href="#" class="header-drop__item-link link-hover trans">Jackets & Coats</a>
-               <a href="#" class="header-drop__item-link link-hover trans">Polos</a>
-               <a href="#" class="header-drop__item-link link-hover trans">T-Shirts</a>
-               <a href="#" class="header-drop__item-link link-hover trans">Shirts</a>
-            </li>
-            <li class="header-drop__item">
-               <a href="#" class="header-drop__item-title menu-title-hover trans">KIDS</a>
-            </li>
-            <li class="header-drop__sub-item">
-               <a href="#" class="header-drop__item-link link-hover trans">Accessories</a>
-               <a href="#" class="header-drop__item-link link-hover trans">Jackets & Coats</a>
-               <a href="#" class="header-drop__item-link link-hover trans">Polos</a>
-               <a href="#" class="header-drop__item-link link-hover trans">T-Shirts</a>
-               <a href="#" class="header-drop__item-link link-hover trans">Shirts</a>
-               <a href="#" class="header-drop__item-link link-hover trans">Bags</a>
-            </li>
-            <li class="header-drop__item">
-               <a href="registration.html"
-                  class="header-drop__item-title burger__media menu-title-hover trans">Account</a>
-            </li>
-            <li class="header-drop__item">
-               <a href="cart.html" class="header-drop__item-title burger__media menu-title-hover trans">Cart</a>
-            </li>
-         </ul>
-      </nav>
-   </header> <!-- Header end -->
-
-   <!-- Main  -->
-   <main class="main">
-      <!-- New arrivals -->
-      <aside class="arrivals pb-46">
-         <div class="arrivals__wrap container">
-            <h3 class="arrivals__h3 arrivals__h3--pb">NEW ARRIVALS </h3>
-            <ul class="arrivals__breadcrumbs">
-               <li class="arrivals-breadcrumbs__list"><a class="arrivals-breadcrumbs__link link-hover trans"
-                     href="index.html">Home</a>
+            </div>
+            <p class="header-drop__text">MENU</p>
+            <ul class="header-drop__list">
+               <li class="header-drop__item">
+                  <a href="catalog.html" class="header-drop__item-title menu-title-hover trans">MAN</a>
                </li>
-               <li class="arrivals-breadcrumbs__list"><a class="arrivals-breadcrumbs__link link-hover trans"
-                     href="catalog.html">Men</a>
+               <li class="header-drop__sub-item">
+                  <a href="#" class="header-drop__item-link link-hover trans">Accessories</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">Bags</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">Denim</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">T-Shirts</a>
                </li>
-               <li class="arrivals-breadcrumbs__list"><a class="arrivals-breadcrumbs__link active__bc link-hover trans"
-                     href="#">New
-                     Arrivals</a>
+               <li class="header-drop__item">
+                  <a href="#" class="header-drop__item-title menu-title-hover trans">WOMAN</a>
+               </li>
+               <li class="header-drop__sub-item">
+                  <a href="#" class="header-drop__item-link link-hover trans">Accessories</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">Jackets & Coats</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">Polos</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">T-Shirts</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">Shirts</a>
+               </li>
+               <li class="header-drop__item">
+                  <a href="#" class="header-drop__item-title menu-title-hover trans">KIDS</a>
+               </li>
+               <li class="header-drop__sub-item">
+                  <a href="#" class="header-drop__item-link link-hover trans">Accessories</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">Jackets & Coats</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">Polos</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">T-Shirts</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">Shirts</a>
+                  <a href="#" class="header-drop__item-link link-hover trans">Bags</a>
+               </li>
+               <li class="header-drop__item">
+                  <a href="registration.html"
+                     class="header-drop__item-title burger__media menu-title-hover trans">Account</a>
+               </li>
+               <li class="header-drop__item">
+                  <a href="cart.html" class="header-drop__item-title burger__media menu-title-hover trans">Cart</a>
                </li>
             </ul>
-         </div>
-      </aside> <!-- New arrivals end -->
+         </nav>
+      </header> <!-- Header end -->
 
-      <!-- Product  -->
-      <section class="product">
-         <div class="container product__wrap">
-            <!-- Sidebar -->
-            <div class="product__sidebar">
-               <!-- Filter  -->
-               <div class="product-filter__wrap">
-                  <div class="product-sidebar__filter" id="shadow">
-                     <button class="product-filter__link button-hover5 trans" id="filter">
-                        <span class="product-filter__link--span">FILTER</span>
-                        <svg class="product-filter__link-svg" width="15" height="10" viewBox="0 0 15 10" fill="none"
-                           xmlns="http://www.w3.org/2000/svg">
-                           <path class="trans"
-                              d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z"
-                              fill="black" />
-                        </svg>
-                     </button>
-                     <!-- Drop filter  -->
-                     <article class="product__details" id="dropFilter">
-                        <details class="product-filter__details">
-                           <summary class="product-details__summary">CATEGORY</summary>
-                           <ul class="product-details__list">
-                              <li><a class="product-list__link link-hover trans" href="#">Accessories</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Bags</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Denim</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Hoodies & Sweatshirts</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Jackets & Coats</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Polos</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Shirts</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Shoes</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Sweaters & Knits</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">T-Shirts</a></li>
-                           </ul>
-                        </details>
-                        <details class="product-filter__details">
-                           <summary class="product-details__summary">BRAND</summary>
-                           <ul class="product-details__list">
-                              <li><a class="product-list__link link-hover trans" href="#">Accessories</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Bags</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Denim</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Hoodies & Sweatshirts</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Jackets & Coats</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Polos</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Shirts</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Shoes</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Sweaters & Knits</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">T-Shirts</a></li>
-                           </ul>
-                        </details>
-                        <details class="product-filter__details">
-                           <summary class="product-details__summary">DESIGNER</summary>
-                           <ul class="product-details__list">
-                              <li><a class="product-list__link link-hover trans" href="#">Accessories</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Bags</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Denim</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Hoodies & Sweatshirts</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Jackets & Coats</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Polos</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Shirts</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Shoes</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">Sweaters & Knits</a></li>
-                              <li><a class="product-list__link link-hover trans" href="#">T-Shirts</a></li>
-                           </ul>
-                        </details>
-                     </article> <!-- Drop filter end  -->
+      <!-- Main  -->
+      <main class="main">
+         <!-- New arrivals -->
+         <aside class="arrivals pb-46">
+            <div class="arrivals__wrap container">
+               <h3 v-on:click="fhfhfh" class="arrivals__h3 arrivals__h3--pb">NEW ARRIVALS </h3>
+               <ul class="arrivals__breadcrumbs">
+                  <li class="arrivals-breadcrumbs__list"><a class="arrivals-breadcrumbs__link link-hover trans"
+                        href="index.html">Home</a>
+                  </li>
+                  <li class="arrivals-breadcrumbs__list"><a class="arrivals-breadcrumbs__link link-hover trans"
+                        href="catalog.html">Men</a>
+                  </li>
+                  <li class="arrivals-breadcrumbs__list"><a
+                        class="arrivals-breadcrumbs__link active__bc link-hover trans" href="#">New
+                        Arrivals</a>
+                  </li>
+               </ul>
+            </div>
+         </aside> <!-- New arrivals end -->
 
+         <!-- Product  -->
+         <section class="product">
+            <div class="container product__wrap">
+               <!-- Sidebar -->
+               <div class="product__sidebar">
+                  <!-- Filter  -->
+                  <div class="product-filter__wrap">
+                     <div class="product-sidebar__filter" id="shadow">
+                        <button class="product-filter__link button-hover5 trans" id="filter">
+                           <span class="product-filter__link--span">FILTER</span>
+                           <svg class="product-filter__link-svg" width="15" height="10" viewBox="0 0 15 10" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path class="trans"
+                                 d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z"
+                                 fill="black" />
+                           </svg>
+                        </button>
+                        <!-- Drop filter  -->
+                        <article class="product__details" id="dropFilter">
+                           <details class="product-filter__details">
+                              <summary class="product-details__summary">CATEGORY</summary>
+                              <ul class="product-details__list">
+                                 <li><a class="product-list__link link-hover trans" href="#">Accessories</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Bags</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Denim</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Hoodies & Sweatshirts</a>
+                                 </li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Jackets & Coats</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Polos</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Shirts</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Shoes</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Sweaters & Knits</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">T-Shirts</a></li>
+                              </ul>
+                           </details>
+                           <details class="product-filter__details">
+                              <summary class="product-details__summary">BRAND</summary>
+                              <ul class="product-details__list">
+                                 <li><a class="product-list__link link-hover trans" href="#">Accessories</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Bags</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Denim</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Hoodies & Sweatshirts</a>
+                                 </li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Jackets & Coats</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Polos</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Shirts</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Shoes</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Sweaters & Knits</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">T-Shirts</a></li>
+                              </ul>
+                           </details>
+                           <details class="product-filter__details">
+                              <summary class="product-details__summary">DESIGNER</summary>
+                              <ul class="product-details__list">
+                                 <li><a class="product-list__link link-hover trans" href="#">Accessories</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Bags</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Denim</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Hoodies & Sweatshirts</a>
+                                 </li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Jackets & Coats</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Polos</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Shirts</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Shoes</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">Sweaters & Knits</a></li>
+                                 <li><a class="product-list__link link-hover trans" href="#">T-Shirts</a></li>
+                              </ul>
+                           </details>
+                        </article> <!-- Drop filter end  -->
+
+                     </div>
                   </div>
+
+                  <!-- Options -->
+                  <div class="product-sidebar__options">
+                     <details class="product-options__details">
+                        <summary class="product-options__summary">TRENDING NOW</summary>
+                        <form class="product-options__form" action="#" method="get">
+                           <label class="product-form__label checkbox-hover trans" for="trend">
+                              <input class="product-form__label-input" type="checkbox" value="trend"
+                                 id="trend">TREND</label>
+                        </form>
+                     </details>
+                     <details class="product-options__details">
+                        <summary class="product-options__summary">SIZE</summary>
+                        <form class="product-options__form" action="#" method="get">
+                           <label class="product-form__label checkbox-hover trans" for="xs"><input
+                                 class="product-form__label-input" type="checkbox" value="xs" id="xs">XS</label>
+                           <label class="product-form__label checkbox-hover trans" for="s"><input
+                                 class="product-form__label-input" type="checkbox" value="s" id="s">S</label>
+                           <label class="product-form__label checkbox-hover trans" for="m"><input
+                                 class="product-form__label-input" type="checkbox" value="m" id="m">M</label>
+                           <label class="product-form__label checkbox-hover trans" for="l"><input
+                                 class="product-form__label-input" type="checkbox" value="l" id="l">L</label>
+                        </form>
+                     </details>
+                     <details class="product-options__details">
+                        <summary class="product-options__summary mr-0">PRICE</summary>
+                        <form class="product-options__form right" action="#" method="get">
+                           <label class="product-form__label checkbox-hover trans" for="price"><input
+                                 class="product-form__label-input" type="checkbox" name="price"
+                                 id="price">$52.00</label>
+                        </form>
+                     </details>
+                  </div>
+
+               </div> <!-- Sidebar end -->
+               <article class="product__grid-wrap product__grid-wrap--catalog">
+
+                  <!--Card Product Vue-->
+                   <div class="product__card shadow filter-card trans" v-for="product in products" :id="product.id_product+'-p-catalog'">
+                  <img :src="'img/catalog/product-card'+product.id_product+'.jpg'" width="360" height="420"
+                     alt="product card trans" class="product-card__img">
+                  <a href="product.html" class="product-card__name">
+                     <h5 class="product-card__h5">{{product.title}}</h5>
+                     <p class="product-card__text">{{product.descp}}</p>
+                     <p class="product-card__text-options">${{product.price}}</p>
+                  </a>
+                  <button class="card-hover button-hover4 trans1" :data-btn-cart-add="product.id_product">
+                     <svg class="card-hover__img trans" width="26" height="24" viewBox="0 0 32 29" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="trans"
+                           d="M26.2009 29C25.5532 28.9738 24.9415 28.6948 24.4972 28.2227C24.0529 27.7506 23.8114 27.1232 23.8245 26.475C23.8376 25.8269 24.1043 25.2097 24.5673 24.7559C25.0303 24.3022 25.6527 24.048 26.301 24.048C26.9493 24.048 27.5717 24.3022 28.0347 24.7559C28.4977 25.2097 28.7644 25.8269 28.7775 26.475C28.7906 27.1232 28.549 27.7506 28.1047 28.2227C27.6604 28.6948 27.0488 28.9738 26.401 29H26.2009ZM6.75293 26.32C6.75293 25.79 6.91011 25.2718 7.20459 24.8311C7.49907 24.3904 7.91764 24.0469 8.40735 23.844C8.89705 23.6412 9.43594 23.5881 9.95581 23.6915C10.4757 23.7949 10.9532 24.0502 11.328 24.425C11.7028 24.7998 11.9581 25.2773 12.0615 25.7972C12.1649 26.317 12.1118 26.8559 11.9089 27.3456C11.7061 27.8353 11.3626 28.2539 10.9219 28.5483C10.4812 28.8428 9.96304 29 9.43298 29C9.08087 29.0003 8.73212 28.9311 8.40674 28.7966C8.08136 28.662 7.78569 28.4646 7.53662 28.2158C7.28755 27.9669 7.09001 27.6713 6.9552 27.3461C6.82039 27.0208 6.75098 26.6721 6.75098 26.32H6.75293ZM10.553 20.686C10.2935 20.6868 10.0409 20.6024 9.83411 20.4457C9.62727 20.2891 9.47758 20.0689 9.40796 19.819L4.57495 2.36401H1.18201C0.868521 2.36401 0.567859 2.23947 0.346191 2.01781C0.124523 1.79614 0 1.49549 0 1.18201C0 0.868519 0.124523 0.567873 0.346191 0.346205C0.567859 0.124537 0.868521 5.81268e-06 1.18201 5.81268e-06H5.46301C5.7225 -0.00080736 5.97504 0.0837201 6.18176 0.240568C6.38848 0.397416 6.53784 0.617884 6.60693 0.868006L11.4399 18.323H24.6179L29.001 8.27501H14.401C14.2428 8.27961 14.0854 8.25242 13.9379 8.19507C13.7904 8.13771 13.6559 8.05134 13.5424 7.94108C13.4288 7.83082 13.3386 7.69891 13.277 7.55315C13.2154 7.40739 13.1836 7.25075 13.1836 7.0925C13.1836 6.93426 13.2154 6.77762 13.277 6.63186C13.3386 6.4861 13.4288 6.35419 13.5424 6.24393C13.6559 6.13367 13.7904 6.0473 13.9379 5.98994C14.0854 5.93259 14.2428 5.90541 14.401 5.91001H30.814C31.0097 5.90996 31.2022 5.95866 31.3744 6.05172C31.5465 6.14478 31.6928 6.27926 31.7999 6.44301C31.9078 6.60729 31.9734 6.79569 31.9908 6.99145C32.0083 7.18721 31.9771 7.38424 31.9 7.565L26.495 19.977C26.4026 20.1876 26.251 20.3668 26.0585 20.4927C25.866 20.6186 25.641 20.6858 25.411 20.686H10.553Z"
+                           fill="white" />
+                     </svg>
+                     <span class="card-hover__text trans">Add to Cart</span>
+                  </button>
+               </div> 
+
+
+
+               </article>
+               <!-- Pagination  -->
+               <ul class="product-pagination__list">
+                  <li class="product-list"><button class="product-list__link"><i
+                           class="fas fa-chevron-left link-hover trans"></i></button>
+                  </li>
+                  <li class="product-list"><a class="product-list__link product__current link-hover trans"
+                        href="#">1</a>
+                  </li>
+                  <li class="product-list"><a class="product-list__link link-hover trans" href="#">2</a></li>
+                  <li class="product-list"><a class="product-list__link link-hover trans" href="#">3</a></li>
+                  <li class="product-list"><a class="product-list__link link-hover trans" href="#">4</a></li>
+                  <li class="product-list"><a class="product-list__link link-hover trans" href="#">5</a></li>
+                  <li class="product-list"><a class="product-list__link link-hover trans" href="#">6</a></li>
+                  <li class="product-list"><a class="product-list__link link-hover trans" href="#">...</a></li>
+                  <li class="product-list"><a class="product-list__link link-hover trans" href="#">20</a></li>
+                  <li class="product-list"><button class="product-list__link"><i
+                           class="fas fa-chevron-right link-hover trans"></i></button>
+                  </li>
+               </ul>
+            </div>
+         </section> <!-- Product end -->
+
+         <!-- Feature -->
+         <aside class="feature">
+
+            <div class="feature__flex-wrap container">
+               <!-- Delivery  -->
+               <div class="feature__item">
+                  <svg class="feature-item__svg" xmlns="http://www.w3.org/2000/svg" width="45" height="32"
+                     viewBox="0 0 45 32">
+                     <g>
+                        <g>
+                           <path fill="#f16d7f"
+                              d="M12.039 26.357c0 1.535-1.233 2.784-2.75 2.784-1.516 0-2.75-1.249-2.75-2.784 0-1.535 1.234-2.783 2.75-2.783.513 0 .93.42.93.94 0 .519-.417.94-.93.94a.899.899 0 0 0-.892.903.9.9 0 0 0 .893.904.9.9 0 0 0 .892-.904c0-.519.416-.94.928-.94.513 0 .929.42.929.94zm26.471 0c0 1.535-1.233 2.784-2.749 2.784s-2.75-1.249-2.75-2.784c0-1.535 1.234-2.783 2.75-2.783.513 0 .929.42.929.94 0 .519-.416.94-.929.94a.899.899 0 0 0-.893.903.9.9 0 0 0 .893.904.9.9 0 0 0 .892-.904c0-.519.416-.94.929-.94.513 0 .928.42.928.94zM45 13.874v12.483c0 .52-.416.94-.929.94h-2.815C40.812 29.963 38.518 32 35.762 32c-2.758 0-5.052-2.037-5.496-4.703H14.784C14.341 29.963 12.046 32 9.29 32c-2.757 0-5.052-2.037-5.496-4.703H1.857C.833 27.297 0 26.454 0 25.417V1.88C0 .843.833 0 1.857 0h25.558c1.024 0 1.857.843 1.857 1.88v1.91h7.123c.082 0 .161.01.237.03 2.306.204 3.458 1.408 4.679 3.47l3.56 6.106a.95.95 0 0 1 .129.478zm-3.665 4.035h1.808v-1.85h-.88a.935.935 0 0 0-.928.939zM39.819 8.43h-6.9v3.767c0 .529.425.959.947.959.065 0 .129.007.19.02h8.53zM1.857 25.417h1.937c.444-2.665 2.739-4.702 5.496-4.702 2.757 0 5.051 2.037 5.494 4.702h12.631V1.88H1.857zm11.15.94c0-2.075-1.668-3.763-3.717-3.763-2.05 0-3.717 1.688-3.717 3.763S7.24 30.12 9.29 30.12c2.049 0 3.716-1.688 3.716-3.763zm26.47 0c0-2.075-1.667-3.763-3.715-3.763-2.05 0-3.718 1.688-3.718 3.763s1.668 3.763 3.718 3.763c2.049 0 3.716-1.688 3.716-3.763zm1.779-.94h1.887v-5.629h-2.737a.934.934 0 0 1-.928-.94v-1.85c0-.752.293-1.436.769-1.942h-6.38a.92.92 0 0 1-.23-.03c-1.44-.118-2.575-1.342-2.575-2.83V7.492c0-.52.416-.94.928-.94h6.485c-.653-.629-1.393-.882-2.578-.882h-6.625v19.748h.994c.443-2.665 2.738-4.702 5.495-4.702s5.052 2.037 5.495 4.702zM3.753 4.73c0-.519.416-.94.928-.94h19.91c.513 0 .928.421.928.94 0 .52-.415.94-.928.94H4.68a.934.934 0 0 1-.928-.94z" />
+                        </g>
+                     </g>
+                  </svg>
+                  <h4 class="feature-item__h4">Free Delivery</h4>
+                  <p class="feature-item__text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                     tion
+                     with extensive models. </p>
                </div>
-
-               <!-- Options -->
-               <div class="product-sidebar__options">
-                  <details class="product-options__details">
-                     <summary class="product-options__summary">TRENDING NOW</summary>
-                     <form class="product-options__form" action="#" method="get">
-                        <label class="product-form__label checkbox-hover trans" for="trend">
-                           <input class="product-form__label-input" type="checkbox" value="trend"
-                              id="trend">TREND</label>
-                     </form>
-                  </details>
-                  <details class="product-options__details">
-                     <summary class="product-options__summary">SIZE</summary>
-                     <form class="product-options__form" action="#" method="get">
-                        <label class="product-form__label checkbox-hover trans" for="xs"><input
-                              class="product-form__label-input" type="checkbox" value="xs" id="xs">XS</label>
-                        <label class="product-form__label checkbox-hover trans" for="s"><input
-                              class="product-form__label-input" type="checkbox" value="s" id="s">S</label>
-                        <label class="product-form__label checkbox-hover trans" for="m"><input
-                              class="product-form__label-input" type="checkbox" value="m" id="m">M</label>
-                        <label class="product-form__label checkbox-hover trans" for="l"><input
-                              class="product-form__label-input" type="checkbox" value="l" id="l">L</label>
-                     </form>
-                  </details>
-                  <details class="product-options__details">
-                     <summary class="product-options__summary mr-0">PRICE</summary>
-                     <form class="product-options__form right" action="#" method="get">
-                        <label class="product-form__label checkbox-hover trans" for="price"><input
-                              class="product-form__label-input" type="checkbox" name="price" id="price">$52.00</label>
-                     </form>
-                  </details>
+               <!-- Sales  -->
+               <div class="feature__item">
+                  <svg class="feature-item__svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                     viewBox="0 0 40 40">
+                     <g>
+                        <g>
+                           <path fill="#f16d7f"
+                              d="M28.087 22.84c0 3.065-1.585 4.586-3.415 4.586-1.783 0-3.328-1.452-3.349-4.361 0-2.932 1.566-4.564 3.46-4.564 2.006 0 3.305 1.566 3.304 4.338zm-1.52.092c0-1.769-.507-3.244-1.85-3.244-1.212 0-1.873 1.454-1.873 3.288-.022 1.856.683 3.265 1.873 3.265 1.277 0 1.85-1.387 1.85-3.309zM15.33 21.408c-1.784 0-3.326-1.454-3.348-4.384 0-2.907 1.564-4.542 3.458-4.542 2.005 0 3.327 1.568 3.327 4.34 0 3.065-1.585 4.586-3.437 4.586zm.045-1.184c1.277 0 1.85-1.388 1.85-3.31 0-1.77-.506-3.245-1.85-3.245-1.21 0-1.85 1.453-1.85 3.289-.045 1.855.64 3.264 1.85 3.266zm9.472-7.586l-8.416 14.75h-1.233l8.416-14.75zm13.945 14.308l-4.21 1.605.733 4.502-4.496.046-.82 4.49-4.24-1.516-2.29 3.929L20 37.098l-3.473 2.904-2.288-3.93-4.241 1.516-.821-4.49-4.495-.045.732-4.506-4.21-1.601 2.211-3.975L.003 20l3.412-2.973-2.21-3.974 4.21-1.603-.733-4.504 4.495-.044.822-4.49 4.24 1.515 2.29-3.928L20 2.902l3.472-2.904 2.289 3.929L30 2.412l.822 4.49 4.494.045-.732 4.504 4.21 1.603-2.21 3.974L39.995 20l-3.412 2.974zm-2.74-1.014l-1.121-2.014-.766-1.378 1.183-1.03 1.734-1.513-1.733-1.508-1.184-1.03.767-1.379 1.12-2.015-2.133-.813-1.46-.555.255-1.563.372-2.286-2.283-.023-1.56-.017-.285-1.557-.417-2.278-2.152.768-1.468.524-.793-1.36-1.162-1.993-1.762 1.473-1.206 1.007-1.205-1.007-1.762-1.473-1.16 1.993-.794 1.36-1.468-.525-2.151-.768-.417 2.278-.286 1.557-1.56.017-2.282.022.372 2.287.254 1.562-1.46.556-2.134.813 1.12 2.014.767 1.378-1.183 1.03-1.735 1.512 1.734 1.51 1.183 1.03-.766 1.379-1.121 2.014 2.133.812 1.46.556-.255 1.562-.371 2.289 2.282.022 1.56.017.286 1.558.416 2.278 2.153-.77 1.468-.523.793 1.36 1.162 1.994 1.762-1.474 1.205-1.008 1.206 1.008 1.762 1.474 1.161-1.994.792-1.36 1.469.525 2.15.77.418-2.278.285-1.558 1.561-.017 2.282-.021-.372-2.287-.254-1.563 1.46-.556z" />
+                        </g>
+                     </g>
+                  </svg>
+                  <h3 class="feature-item__h4">Sales & discounts</h3>
+                  <p class="feature-item__text">Worldwide delivery on all. Authorit tively morph next-generation
+                     innov
+                     tion with extensive
+                     models. </p>
                </div>
-
-            </div> <!-- Sidebar end -->
-
-            <article class="product__grid-wrap product__grid-wrap--catalog">
-            </article>
-            <!-- Pagination  -->
-            <ul class="product-pagination__list">
-               <li class="product-list"><button class="product-list__link"><i
-                        class="fas fa-chevron-left link-hover trans"></i></button>
-               </li>
-               <li class="product-list"><a class="product-list__link product__current link-hover trans" href="#">1</a>
-               </li>
-               <li class="product-list"><a class="product-list__link link-hover trans" href="#">2</a></li>
-               <li class="product-list"><a class="product-list__link link-hover trans" href="#">3</a></li>
-               <li class="product-list"><a class="product-list__link link-hover trans" href="#">4</a></li>
-               <li class="product-list"><a class="product-list__link link-hover trans" href="#">5</a></li>
-               <li class="product-list"><a class="product-list__link link-hover trans" href="#">6</a></li>
-               <li class="product-list"><a class="product-list__link link-hover trans" href="#">...</a></li>
-               <li class="product-list"><a class="product-list__link link-hover trans" href="#">20</a></li>
-               <li class="product-list"><button class="product-list__link"><i
-                        class="fas fa-chevron-right link-hover trans"></i></button>
-               </li>
-            </ul>
-         </div>
-      </section> <!-- Product end -->
-
-      <!-- Feature -->
-      <aside class="feature">
-
-         <div class="feature__flex-wrap container">
-            <!-- Delivery  -->
-            <div class="feature__item">
-               <svg class="feature-item__svg" xmlns="http://www.w3.org/2000/svg" width="45" height="32"
-                  viewBox="0 0 45 32">
-                  <g>
+               <!-- Quality  -->
+               <div class="feature__item">
+                  <svg class="feature-item__svg" xmlns="http://www.w3.org/2000/svg" width="47" height="35"
+                     viewBox="0 0 47 35">
                      <g>
-                        <path fill="#f16d7f"
-                           d="M12.039 26.357c0 1.535-1.233 2.784-2.75 2.784-1.516 0-2.75-1.249-2.75-2.784 0-1.535 1.234-2.783 2.75-2.783.513 0 .93.42.93.94 0 .519-.417.94-.93.94a.899.899 0 0 0-.892.903.9.9 0 0 0 .893.904.9.9 0 0 0 .892-.904c0-.519.416-.94.928-.94.513 0 .929.42.929.94zm26.471 0c0 1.535-1.233 2.784-2.749 2.784s-2.75-1.249-2.75-2.784c0-1.535 1.234-2.783 2.75-2.783.513 0 .929.42.929.94 0 .519-.416.94-.929.94a.899.899 0 0 0-.893.903.9.9 0 0 0 .893.904.9.9 0 0 0 .892-.904c0-.519.416-.94.929-.94.513 0 .928.42.928.94zM45 13.874v12.483c0 .52-.416.94-.929.94h-2.815C40.812 29.963 38.518 32 35.762 32c-2.758 0-5.052-2.037-5.496-4.703H14.784C14.341 29.963 12.046 32 9.29 32c-2.757 0-5.052-2.037-5.496-4.703H1.857C.833 27.297 0 26.454 0 25.417V1.88C0 .843.833 0 1.857 0h25.558c1.024 0 1.857.843 1.857 1.88v1.91h7.123c.082 0 .161.01.237.03 2.306.204 3.458 1.408 4.679 3.47l3.56 6.106a.95.95 0 0 1 .129.478zm-3.665 4.035h1.808v-1.85h-.88a.935.935 0 0 0-.928.939zM39.819 8.43h-6.9v3.767c0 .529.425.959.947.959.065 0 .129.007.19.02h8.53zM1.857 25.417h1.937c.444-2.665 2.739-4.702 5.496-4.702 2.757 0 5.051 2.037 5.494 4.702h12.631V1.88H1.857zm11.15.94c0-2.075-1.668-3.763-3.717-3.763-2.05 0-3.717 1.688-3.717 3.763S7.24 30.12 9.29 30.12c2.049 0 3.716-1.688 3.716-3.763zm26.47 0c0-2.075-1.667-3.763-3.715-3.763-2.05 0-3.718 1.688-3.718 3.763s1.668 3.763 3.718 3.763c2.049 0 3.716-1.688 3.716-3.763zm1.779-.94h1.887v-5.629h-2.737a.934.934 0 0 1-.928-.94v-1.85c0-.752.293-1.436.769-1.942h-6.38a.92.92 0 0 1-.23-.03c-1.44-.118-2.575-1.342-2.575-2.83V7.492c0-.52.416-.94.928-.94h6.485c-.653-.629-1.393-.882-2.578-.882h-6.625v19.748h.994c.443-2.665 2.738-4.702 5.495-4.702s5.052 2.037 5.495 4.702zM3.753 4.73c0-.519.416-.94.928-.94h19.91c.513 0 .928.421.928.94 0 .52-.415.94-.928.94H4.68a.934.934 0 0 1-.928-.94z" />
+                        <g>
+                           <path fill="#f16d7f"
+                              d="M47.016 13.091c0 2.133-1.516 3.916-3.548 4.402v12.315c0 .087-.028.16-.05.242.03.124.05.253.05.389 0 4.42-17.927 4.55-19.968 4.55-2.044 0-19.968-.13-19.968-4.55 0-.136.018-.265.05-.389-.019-.082-.05-.155-.05-.242V17.493c-2.03-.486-3.548-2.269-3.548-4.402 0-2.503 2.087-4.542 4.648-4.542 2.562 0 4.646 2.039 4.646 4.542 0 1.343-.607 2.54-1.559 3.372l5.86 2.06 8.355-9.717c-1.77-.643-3.046-2.296-3.046-4.25 0-2.505 2.086-4.545 4.646-4.545 2.563 0 4.647 2.04 4.647 4.544 0 1.974-1.3 3.638-3.098 4.266l8.342 9.701 5.862-2.059c-.953-.833-1.56-2.03-1.56-3.372 0-2.503 2.083-4.542 4.647-4.542 2.56 0 4.645 2.039 4.642 4.542zM23.536 6.89c1.313 0 2.385-1.046 2.385-2.333 0-1.287-1.072-2.334-2.385-2.334-1.316 0-2.387 1.047-2.387 2.334 0 1.287 1.071 2.333 2.387 2.333zM5.792 18.135v9.958c4.885-2.126 16.115-2.205 17.708-2.205s12.82.079 17.707 2.205v-9.957l-7.76 2.73a1.154 1.154 0 0 1-1.245-.332l-8.7-10.119-8.7 10.12a1.155 1.155 0 0 1-1.246.33zm34.274 12.779c.454-.167.792-.329.995-.475-.72-.523-3.06-1.235-6.967-1.736-2.755-.354-6.28-.605-10.591-.605-4.31 0-7.836.25-10.59.605-3.907.5-6.247 1.213-6.968 1.736.203.142.542.308.996.475 2.308.852 7.854 1.865 16.562 1.865 8.71 0 14.256-1.013 16.563-1.865zM4.636 15.425c1.316 0 2.386-1.047 2.386-2.334 0-1.285-1.07-2.331-2.386-2.331S2.25 11.806 2.25 13.09c0 1.287 1.071 2.334 2.387 2.334zm40.125-2.334c0-1.285-1.074-2.331-2.387-2.331-1.316 0-2.387 1.046-2.387 2.331 0 1.287 1.071 2.334 2.387 2.334 1.313 0 2.384-1.047 2.387-2.334z" />
+                        </g>
                      </g>
-                  </g>
-               </svg>
-               <h4 class="feature-item__h4">Free Delivery</h4>
-               <p class="feature-item__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion
-                  with extensive models. </p>
+                  </svg>
+                  <h3 class="feature-item__h4">Quality assurance</h3>
+                  <p class="feature-item__text">Worldwide delivery on all. Authorit tively morph next-generation
+                     innov
+                     tion with extensive
+                     models. </p>
+               </div>
             </div>
-            <!-- Sales  -->
-            <div class="feature__item">
-               <svg class="feature-item__svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                  viewBox="0 0 40 40">
-                  <g>
-                     <g>
-                        <path fill="#f16d7f"
-                           d="M28.087 22.84c0 3.065-1.585 4.586-3.415 4.586-1.783 0-3.328-1.452-3.349-4.361 0-2.932 1.566-4.564 3.46-4.564 2.006 0 3.305 1.566 3.304 4.338zm-1.52.092c0-1.769-.507-3.244-1.85-3.244-1.212 0-1.873 1.454-1.873 3.288-.022 1.856.683 3.265 1.873 3.265 1.277 0 1.85-1.387 1.85-3.309zM15.33 21.408c-1.784 0-3.326-1.454-3.348-4.384 0-2.907 1.564-4.542 3.458-4.542 2.005 0 3.327 1.568 3.327 4.34 0 3.065-1.585 4.586-3.437 4.586zm.045-1.184c1.277 0 1.85-1.388 1.85-3.31 0-1.77-.506-3.245-1.85-3.245-1.21 0-1.85 1.453-1.85 3.289-.045 1.855.64 3.264 1.85 3.266zm9.472-7.586l-8.416 14.75h-1.233l8.416-14.75zm13.945 14.308l-4.21 1.605.733 4.502-4.496.046-.82 4.49-4.24-1.516-2.29 3.929L20 37.098l-3.473 2.904-2.288-3.93-4.241 1.516-.821-4.49-4.495-.045.732-4.506-4.21-1.601 2.211-3.975L.003 20l3.412-2.973-2.21-3.974 4.21-1.603-.733-4.504 4.495-.044.822-4.49 4.24 1.515 2.29-3.928L20 2.902l3.472-2.904 2.289 3.929L30 2.412l.822 4.49 4.494.045-.732 4.504 4.21 1.603-2.21 3.974L39.995 20l-3.412 2.974zm-2.74-1.014l-1.121-2.014-.766-1.378 1.183-1.03 1.734-1.513-1.733-1.508-1.184-1.03.767-1.379 1.12-2.015-2.133-.813-1.46-.555.255-1.563.372-2.286-2.283-.023-1.56-.017-.285-1.557-.417-2.278-2.152.768-1.468.524-.793-1.36-1.162-1.993-1.762 1.473-1.206 1.007-1.205-1.007-1.762-1.473-1.16 1.993-.794 1.36-1.468-.525-2.151-.768-.417 2.278-.286 1.557-1.56.017-2.282.022.372 2.287.254 1.562-1.46.556-2.134.813 1.12 2.014.767 1.378-1.183 1.03-1.735 1.512 1.734 1.51 1.183 1.03-.766 1.379-1.121 2.014 2.133.812 1.46.556-.255 1.562-.371 2.289 2.282.022 1.56.017.286 1.558.416 2.278 2.153-.77 1.468-.523.793 1.36 1.162 1.994 1.762-1.474 1.205-1.008 1.206 1.008 1.762 1.474 1.161-1.994.792-1.36 1.469.525 2.15.77.418-2.278.285-1.558 1.561-.017 2.282-.021-.372-2.287-.254-1.563 1.46-.556z" />
-                     </g>
-                  </g>
-               </svg>
-               <h3 class="feature-item__h4">Sales & discounts</h3>
-               <p class="feature-item__text">Worldwide delivery on all. Authorit tively morph next-generation
-                  innov
-                  tion with extensive
-                  models. </p>
-            </div>
-            <!-- Quality  -->
-            <div class="feature__item">
-               <svg class="feature-item__svg" xmlns="http://www.w3.org/2000/svg" width="47" height="35"
-                  viewBox="0 0 47 35">
-                  <g>
-                     <g>
-                        <path fill="#f16d7f"
-                           d="M47.016 13.091c0 2.133-1.516 3.916-3.548 4.402v12.315c0 .087-.028.16-.05.242.03.124.05.253.05.389 0 4.42-17.927 4.55-19.968 4.55-2.044 0-19.968-.13-19.968-4.55 0-.136.018-.265.05-.389-.019-.082-.05-.155-.05-.242V17.493c-2.03-.486-3.548-2.269-3.548-4.402 0-2.503 2.087-4.542 4.648-4.542 2.562 0 4.646 2.039 4.646 4.542 0 1.343-.607 2.54-1.559 3.372l5.86 2.06 8.355-9.717c-1.77-.643-3.046-2.296-3.046-4.25 0-2.505 2.086-4.545 4.646-4.545 2.563 0 4.647 2.04 4.647 4.544 0 1.974-1.3 3.638-3.098 4.266l8.342 9.701 5.862-2.059c-.953-.833-1.56-2.03-1.56-3.372 0-2.503 2.083-4.542 4.647-4.542 2.56 0 4.645 2.039 4.642 4.542zM23.536 6.89c1.313 0 2.385-1.046 2.385-2.333 0-1.287-1.072-2.334-2.385-2.334-1.316 0-2.387 1.047-2.387 2.334 0 1.287 1.071 2.333 2.387 2.333zM5.792 18.135v9.958c4.885-2.126 16.115-2.205 17.708-2.205s12.82.079 17.707 2.205v-9.957l-7.76 2.73a1.154 1.154 0 0 1-1.245-.332l-8.7-10.119-8.7 10.12a1.155 1.155 0 0 1-1.246.33zm34.274 12.779c.454-.167.792-.329.995-.475-.72-.523-3.06-1.235-6.967-1.736-2.755-.354-6.28-.605-10.591-.605-4.31 0-7.836.25-10.59.605-3.907.5-6.247 1.213-6.968 1.736.203.142.542.308.996.475 2.308.852 7.854 1.865 16.562 1.865 8.71 0 14.256-1.013 16.563-1.865zM4.636 15.425c1.316 0 2.386-1.047 2.386-2.334 0-1.285-1.07-2.331-2.386-2.331S2.25 11.806 2.25 13.09c0 1.287 1.071 2.334 2.387 2.334zm40.125-2.334c0-1.285-1.074-2.331-2.387-2.331-1.316 0-2.387 1.046-2.387 2.331 0 1.287 1.071 2.334 2.387 2.334 1.313 0 2.384-1.047 2.387-2.334z" />
-                     </g>
-                  </g>
-               </svg>
-               <h3 class="feature-item__h4">Quality assurance</h3>
-               <p class="feature-item__text">Worldwide delivery on all. Authorit tively morph next-generation
-                  innov
-                  tion with extensive
-                  models. </p>
-            </div>
-         </div>
 
 
-      </aside> <!-- Feature end -->
-   </main> <!-- Main  end-->
-   <!-- Cart  -->
-   <div class="cart">
-      <!-- Shopping cart -->
-      <section class="shopping container">
-         <div class="shopping__wrap">
-            <!-- Cards container  -->
-            <div class="shopping__grid-wrap">
-               <!-- Card - 1 -->
-               <!-- Card - 2 -->
+         </aside> <!-- Feature end -->
+      </main> <!-- Main  end-->
+      <!-- Cart  -->
+      <div class="cart">
+         <!-- Shopping cart -->
+         <section class="shopping container">
+            <div class="shopping__wrap">
+               <!-- Cards container  -->
+               <div class="shopping__grid-wrap">
+                  <!-- Card - 1 -->
+                  <!-- Card - 2 -->
+               </div>
             </div>
-         </div>
-         <!-- Form container -->
-         <form action="#" class="shopping__form">
-            <!-- Delivery registration -->
-            <div class="shopping__delivery">
-               <h5 class="shopping__h5">Shopping Adress</h5>
-               <!-- Сountry selection -->
-               <datalist id="country" class="shopping-delivery__adress">
-                  <option value="Bangladesh">Bangladesh</option>
-                  <option value="Россия">Россия</option>
-                  <option value="Австралия">Австралия</option>
-                  <option value="Австрия">Австрия</option>
-                  <option value="Ангилья">Ангилья</option>
-                  <option value="Багамские острова">Багамские острова</option>
-                  <option value="Босния/Герцеговина">Босния/Герцеговина</option>
-                  <option value="Венгрия">Венгрия</option>
-                  <option value="Гаити">Гаити</option>
-                  <option value="Гонконг">Гонконг</option>
-                  <option value="Кипр">Кипр</option>
-                  <option value="Мальдивские острова">Мальдивские острова</option>
-                  <option value="О.А.Э.">О.А.Э.</option>
-                  <option value="Эстония">Эстония</option>
-                  <option value="Эфиопия">Эфиопия</option>
-                  <option value="ЮАР">ЮАР</option>
-                  <option value="Япония">Япония</option>
-               </datalist>
-               <input class="shopping-delivery__adress input-hover" type="text" list="country" placeholder="Bangladesh">
-               <!-- State ​​selection -->
-               <input type="text" class="shopping-delivery__adress shopping-delivery__color input-hover" required
-                  placeholder="State">
-               <!-- Postcode -->
-               <input type="text" class="shopping-delivery__adress shopping-delivery__color input-hover" required
-                  placeholder="Postcode / Zip">
-               <button class="shopping-delivery__button button-hover2" type="submit">Get a quote</button>
-            </div>
-            <!-- Total cost  -->
-            <div class="shopping__totalcost">
-               <p class="shopping-totalcost__small shopping-totalcost__small-indent">Sub total</p>
-               <p class="shopping-totalcost__small">$900</p>
-               <br>
-               <h5 class="shopping-totalcost__h5 shopping-totalcost__indent">Grand Total</h5>
-               <h5 class="shopping-totalcost__h5 shopping-totalcost__h5-collor">$900</h5>
-               <div class="shopping__border"></div>
-               <button class="shopping-totalcost__button button-hover3" type="submit">Proceed to checkout</button>
-            </div>
-         </form>
-      </section> <!-- Shopping cart end -->
-   </div>
-   <!-- Cart END  -->
-
-   <!-- Footer  -->
-   <footer class="footer">
-      <!-- Subscribe -->
-      <section class="subscribe">
-         <div class="subscribe__wrap container">
-            <!-- Subscribe info -->
-            <div class="subscribe__info">
-               <img class="subscribe-info__img" src="img/header-footer/footer-avatar.png" width="96" height="96"
-                  alt="avatar">
-               <h4 class="subscribe-info__h4">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, <span
-                     class="subscribe-info__h4-span">a pulvinar
-                     purus condimentum“</span></h4>
-            </div>
-            <!-- Subscribe form -->
-            <div class="subscribe__form-wrap">
-               <h3 class="subscribe__h3">SUBSCRIBE </h3>
-               <h4 class="subscribe__h4">FOR OUR NEWLETTER AND PROMOTION </h4>
-               <form class="subscribe__form" action="#" method="post">
-                  <input class="subscribe__input input-hover trans" type="email" name="email" id="#"
-                     placeholder="Enter Your Email">
-                  <button class="subscribe__button button-hover3 trans" type="submit">Subscribe</button>
-               </form>
-            </div>
-         </div>
-      </section> <!-- Subscribe end -->
-      <div class="footer__wrap container">
-         <h5 class="footer__h5">
-            &copy; 2021 Brand All Rights Reserved.
-         </h5>
-         <div class="footer__links">
-            <a class="footer-links__link button-hover trans" href="#"><i class="fab fa-facebook-f"></i></a>
-            <a class="footer-links__link button-hover trans" href="#"><i class="fab fa-instagram"></i></a>
-            <a class="footer-links__link button-hover trans" href="#"><i class="fab fa-pinterest-p"></i></a>
-            <a class="footer-links__link button-hover trans" href="#"><i class="fab fa-twitter"></i></a>
-         </div>
+            <!-- Form container -->
+            <form action="#" class="shopping__form">
+               <!-- Delivery registration -->
+               <div class="shopping__delivery">
+                  <h5 class="shopping__h5">Shopping Adress</h5>
+                  <!-- Сountry selection -->
+                  <datalist id="country" class="shopping-delivery__adress">
+                     <option value="Bangladesh">Bangladesh</option>
+                     <option value="Россия">Россия</option>
+                     <option value="Австралия">Австралия</option>
+                     <option value="Австрия">Австрия</option>
+                     <option value="Ангилья">Ангилья</option>
+                     <option value="Багамские острова">Багамские острова</option>
+                     <option value="Босния/Герцеговина">Босния/Герцеговина</option>
+                     <option value="Венгрия">Венгрия</option>
+                     <option value="Гаити">Гаити</option>
+                     <option value="Гонконг">Гонконг</option>
+                     <option value="Кипр">Кипр</option>
+                     <option value="Мальдивские острова">Мальдивские острова</option>
+                     <option value="О.А.Э.">О.А.Э.</option>
+                     <option value="Эстония">Эстония</option>
+                     <option value="Эфиопия">Эфиопия</option>
+                     <option value="ЮАР">ЮАР</option>
+                     <option value="Япония">Япония</option>
+                  </datalist>
+                  <input class="shopping-delivery__adress input-hover" type="text" list="country"
+                     placeholder="Bangladesh">
+                  <!-- State ​​selection -->
+                  <input type="text" class="shopping-delivery__adress shopping-delivery__color input-hover" required
+                     placeholder="State">
+                  <!-- Postcode -->
+                  <input type="text" class="shopping-delivery__adress shopping-delivery__color input-hover" required
+                     placeholder="Postcode / Zip">
+                  <button class="shopping-delivery__button button-hover2" type="submit">Get a quote</button>
+               </div>
+               <!-- Total cost  -->
+               <div class="shopping__totalcost">
+                  <p class="shopping-totalcost__small shopping-totalcost__small-indent">Sub total</p>
+                  <p class="shopping-totalcost__small">$900</p>
+                  <br>
+                  <h5 class="shopping-totalcost__h5 shopping-totalcost__indent">Grand Total</h5>
+                  <h5 class="shopping-totalcost__h5 shopping-totalcost__h5-collor">$900</h5>
+                  <div class="shopping__border"></div>
+                  <button class="shopping-totalcost__button button-hover3" type="submit">Proceed to checkout</button>
+               </div>
+            </form>
+         </section> <!-- Shopping cart end -->
       </div>
-   </footer> <!-- Footer end -->
+      <!-- Cart END  -->
 
+      <!-- Footer  -->
+      <footer class="footer">
+         <!-- Subscribe -->
+         <section class="subscribe">
+            <div class="subscribe__wrap container">
+               <!-- Subscribe info -->
+               <div class="subscribe__info">
+                  <img class="subscribe-info__img" src="img/header-footer/footer-avatar.png" width="96" height="96"
+                     alt="avatar">
+                  <h4 class="subscribe-info__h4">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, <span
+                        class="subscribe-info__h4-span">a pulvinar
+                        purus condimentum“</span></h4>
+               </div>
+               <!-- Subscribe form -->
+               <div class="subscribe__form-wrap">
+                  <h3 class="subscribe__h3">SUBSCRIBE </h3>
+                  <h4 class="subscribe__h4">FOR OUR NEWLETTER AND PROMOTION </h4>
+                  <form class="subscribe__form" action="#" method="post">
+                     <input class="subscribe__input input-hover trans" type="email" name="email" id="#"
+                        placeholder="Enter Your Email">
+                     <button class="subscribe__button button-hover3 trans" type="submit">Subscribe</button>
+                  </form>
+               </div>
+            </div>
+         </section> <!-- Subscribe end -->
+         <div class="footer__wrap container">
+            <h5 class="footer__h5">
+               &copy; 2021 Brand All Rights Reserved.
+            </h5>
+            <div class="footer__links">
+               <a class="footer-links__link button-hover trans" href="#"><i class="fab fa-facebook-f"></i></a>
+               <a class="footer-links__link button-hover trans" href="#"><i class="fab fa-instagram"></i></a>
+               <a class="footer-links__link button-hover trans" href="#"><i class="fab fa-pinterest-p"></i></a>
+               <a class="footer-links__link button-hover trans" href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+         </div>
+      </footer> <!-- Footer end -->
+   </div>
    <!-- Script  -->
-   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> <!-- Подключили vue -->
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> <!-- Подключили vue -->
    <script src="js\vue-script.js"></script>
    <!-- <script src="js/main-catalog.js"></script> -->
-   <script src="js/script.js"></script>
+   <!-- <script src="js/script.js"></script> -->
 </body>
 
 </html>
