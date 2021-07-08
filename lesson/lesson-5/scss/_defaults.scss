@@ -1,0 +1,123 @@
+//COLORS
+$white: #ffffff;
+$black: #000000;
+$bittersweet: #f16d7f;
+$bittersweetlight: #e6677893;
+$snow: #fbfbfb;
+$zambezi: #5d5d5d;
+$matterhorn: #575757;
+$dimgray: #6f6e6e;
+$whisper: #e8e8e8;
+$nobel: #9f9f9f;
+
+// FONTS
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+
+$fontfamily_main: "Lato", sans-serif;
+$fontfamily_mainweight: (
+   light: 300,
+   regular: 400,
+   semibold: 700,
+   bold: 900,
+);
+
+$fontsize: (
+   h1: 48px,
+   h2: 30px,
+   h3: 24px,
+   h4: 18px,
+   h5: 16px,
+   text: 14px,
+   small: 11px,
+);
+
+$texttransform: (
+   none: none,
+   cap: capitalize,
+   upper: uppercase,
+);
+
+// Nixit for font style
+@mixin fontstyle($fw, $fs, $tt) {
+   @if map-has-key($fontfamily_mainweight, $fw) {
+      font-weight: #{map-get($fontfamily_mainweight, $fw)};
+   } @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$fw}`. "
+         + "Please make sure it is defined in `$breakpoints` map.";
+   }
+   @if map-has-key($fontsize, $fs) {
+      font-size: #{map-get($fontsize, $fs)};
+   } @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$fs}`. "
+         + "Please make sure it is defined in `$breakpoints` map.";
+   }
+   @if map-has-key($texttransform, $tt) {
+      text-transform: #{map-get($texttransform, $tt)};
+   } @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$tt}`. "
+         + "Please make sure it is defined in `$breakpoints` map.";
+   }
+}
+
+// Example
+
+//  .featur-item__h4 {
+//    @include fontstyle(semibold, h4, cap);
+// }
+
+// .featur-item__text {
+//    @include fontstyle(regular, 0, cap);
+//    font-size: 15px;
+// }
+// .featur-item {
+//    @each $font, $size in $fontsize {
+//       &__#{$font} {
+//          font-size: $size;
+//       }
+//    }
+// }
+
+// MEDIA
+$level_0: 1170px;
+$level_1: 1100px;
+$level_2: 1000px;
+$level_3: 900px;
+$level_4: 800px;
+$level_5: 700px;
+$level_6: 600px;
+$level_7: 450px;
+$level_8: 374px;
+
+// WIDTH
+$desktopwidth: 1140px;
+
+.container {
+   max-width: $desktopwidth + 30px;
+   margin: 0 auto;
+   padding: 0 15px;
+   @media (max-width: $level_7) {
+      padding: 0 8px;
+   }
+}
+
+section,
+article,
+header,
+main,
+footer,
+aside {
+   display: block;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   font-family: $fontfamily_main;
+   min-width: $level_8;
+   min-height: 100vh;
+}
+
+.main {
+   flex-grow: 1;
+}
