@@ -9,7 +9,8 @@ const app = new Vue({
       cartProducts: [],// Массив карточек в корзине
       searchLine: '', //содержимое поля поиска
       API_URL: 'https://raw.githubusercontent.com/AmVeronika/JSON-EBT/master/json',//создание адреса сервера, к которому обращается клиент
-      showCart: false //Открытие/скрытие корзины
+      showCart: false, //Открытие/скрытие корзины
+
    },
    methods: {
       makeGETRequest() { //Запрос списка товаров
@@ -20,12 +21,22 @@ const app = new Vue({
                this.products = [...data]
             })
       },
+
+
+      addListProductCart() {//Добавление карточек в корзину
+         console.log(this.cartProducts)
+          console.log(event.target.dataset.btncartAdd)
+         // console.log(this.products[event.target.dataset.btncartAdd])
+         this.cartProducts.push(this.products[event.target.dataset.btncartAdd])
+         console.log(this.cartProducts)
+         // console.log(this.cartProducts[event.target.dataset.btncartAdd - 1])
+         // console.log(this.cartProducts)
+         // this.cartProducts.push(...this.products[event.target.dataset.btncartAdd])
+
+      },
       fhfhfh() {
          console.log(this.products)
       },
-      addListProductCart() {
-         console.log(event.target.dataset)
-      }
    },
 
    mounted() {
