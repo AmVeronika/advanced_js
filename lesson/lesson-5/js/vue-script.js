@@ -10,7 +10,17 @@ const app = new Vue({
       searchLine: '', //содержимое поля поиска
       API_URL: 'https://raw.githubusercontent.com/AmVeronika/JSON-EBT/master/json',//создание адреса сервера, к которому обращается клиент
       showCart: false, //Открытие/скрытие корзины
-
+      counterCart: 0, // Счетчик товаров в корзине в шапке
+   },
+   computed: {
+      CounterCart: function () { // Метод по увеличению значения счетчика при нажатии кнопки - добавить
+         return this.counterCart = this.cartProducts.length
+      },
+      filterProducts: function () { // Поиск карточек по данным введенным пользователем
+         return this.products.filter((product) => {// Добавляем в новый массив карточки из основного массива с карточками из json, прошедшие проверку :
+            return product.title.toLowerCase().includes(this.searchLine.toLowerCase())   
+         })
+      }
    },
    methods: {
       makeGETRequest() { //Запрос списка товаров
@@ -21,27 +31,24 @@ const app = new Vue({
                this.products = [...data]
             })
       },
-
-
-      addListProductCart() {//Добавление карточек в корзину
-         console.log(this.cartProducts)
-          console.log(event.target.dataset.btncartAdd)
-         // console.log(this.products[event.target.dataset.btncartAdd])
-         this.cartProducts.push(this.products[event.target.dataset.btncartAdd])
-         console.log(this.cartProducts)
-         // console.log(this.cartProducts[event.target.dataset.btncartAdd - 1])
-         // console.log(this.cartProducts)
-         // this.cartProducts.push(...this.products[event.target.dataset.btncartAdd])
-
+      addListProductCart(product) {//Добавление карточек в корзину 
+         if (this.cartProducts.includes(product)) {
+            product.currentQuantity++ // Если нажали на кнопку повторно, то в карточке меняется значение value
+           
+         } else {
+            this.cartProducts.push(product)// при вызове метода сразу передали нужную карточку
+         }
       },
-      fhfhfh() {
-         console.log(this.products)
+      removeListProductCart(cartProduct) { //Удаление карточки из корзины
+         cartProduct.currentQuantity = 1 //Обнуление количества товаров при удалении карточки
+         this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1)
+
       },
    },
 
    mounted() {
       this.makeGETRequest()
-
+      console.log(this.searchLine)
    }
 });
 
