@@ -42,13 +42,13 @@ const app = new Vue({
       removeListProductCart(cartProduct) { //Удаление карточки из корзины
          cartProduct.currentQuantity = 1 //Обнуление количества товаров при удалении карточки
          this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1)
+    
 
       },
    },
 
    mounted() {
       this.makeGETRequest()
-      console.log(this.searchLine)
    }
 });
 

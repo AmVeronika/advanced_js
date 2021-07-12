@@ -354,6 +354,9 @@
          <section class="shopping container">
             <div class="shopping__wrap">
                <!-- Cards container  -->
+               <p style="font-weight: 600; font-size: 36px; margin: 253px auto 0;" v-if="!cartProducts.length">Вы ничего
+                  ещё не
+                  заказали</p>
                <div class="shopping__grid-wrap">
                   <!-- Cards -->
                   <div class="shopping__card shadow" v-for="cartProduct in cartProducts"
@@ -387,6 +390,7 @@
                      </button>
                   </div>
                </div>
+
             </div>
             <!-- Form container -->
             <form action="#" class="shopping__form">
