@@ -1,0 +1,71 @@
+.registration {
+   display: grid;
+   grid-template-columns: 360px 1fr;
+   gap: 128px;
+   margin: 65px auto 95px;
+   // form
+   &__form {
+      max-width: 360px;
+   }
+   &-form__h5 {
+      @include fontstyle(light, h5, none);
+      line-height: 19px;
+      color: #222222;
+   }
+   &-form__input {
+      width: 100%;
+      display: inline-block;
+      @include fontstyle(light, 0, none);
+      font-size: 13px;
+      line-height: 16px;
+      padding: 13px 0 14px 15px;
+      border: 1px solid #a4a4a4;
+      margin-top: 20px;
+   }
+   &-form__label {
+      @include fontstyle(light, small, none);
+      line-height: 13px;
+      color: $black;
+      margin-right: 20px;
+      cursor: pointer;
+   }
+   &-form__label-input {
+      margin: 32px 10px 32px 0;
+   }
+   &-form__text {
+      @include fontstyle(light, 0, none);
+      font-size: 13px;
+      line-height: 16px;
+      color: #b1b1b1;
+      margin: 15px 0 39px;
+   }
+   &-form__button {
+      @include fontstyle(regular, text, upper);
+      line-height: 17px;
+      color: $bittersweet;
+      background: none;
+      padding: 15px 28px;
+      border: 1px solid $bittersweet;
+   }
+   &-form__button-arrow {
+      margin-left: 20px;
+   }
+   &__advantages {
+      max-width: 655px;
+   }
+   &-advantages {
+      &__h3 {
+         @include fontstyle(light, h3, upper);
+      }
+      &__text {
+         @include fontstyle(light, h3, none);
+         padding: 22px 0;
+      }
+   }
+   &-list__item {
+      @include fontstyle(light, h3, none);
+      background: url(../img/registration/mark.png) left center no-repeat;
+      padding-left: 45px;
+      line-height: 40px;
+   }
+}
