@@ -36,6 +36,7 @@ window.onkeydown = (evt) => {
 }
 // закрытие модального окна при нажатии на серое поле
 cartBlockOpen.addEventListener('click', (event) => {
+   // if(event.target.classList.contains("cart cart-active"))
    if (event.toElement.className == 'cart cart-active') {
       document.querySelector('.cart').classList.remove('cart-active');
    }

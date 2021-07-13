@@ -18,7 +18,7 @@ const app = new Vue({
       },
       filterProducts: function () { // Поиск карточек по данным введенным пользователем
          return this.products.filter((product) => {// Добавляем в новый массив карточки из основного массива с карточками из json, прошедшие проверку :
-            return product.title.toLowerCase().includes(this.searchLine.toLowerCase())   
+            return product.title.toLowerCase().includes(this.searchLine.toLowerCase())
          })
       }
    },
@@ -34,7 +34,7 @@ const app = new Vue({
       addListProductCart(product) {//Добавление карточек в корзину 
          if (this.cartProducts.includes(product)) {
             product.currentQuantity++ // Если нажали на кнопку повторно, то в карточке меняется значение value
-           
+
          } else {
             this.cartProducts.push(product)// при вызове метода сразу передали нужную карточку
          }
@@ -44,6 +44,11 @@ const app = new Vue({
          this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1)
 
       },
+      cartBlockClose() {// закрытие модального окна при нажатии на серое поле
+         if (event.target.classList.contains("cart")) {
+            this.showCart = !this.showCart 
+         }
+      }
    },
 
    mounted() {
