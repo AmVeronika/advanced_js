@@ -31,7 +31,7 @@
    // Cards container
    &__card {
       display: grid;
-      grid-template-columns: 25% 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
       grid-template-rows: 222px;
       column-gap: 15px;
       box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);

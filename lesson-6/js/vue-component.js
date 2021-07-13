@@ -2,8 +2,15 @@
 // -------------------CATALOG CONTAIMER ---------------------
 // ----------------------------------------------------------
 Vue.component("catalog-wrapp", {
-   props: ['filterproducts'],
-   template: `<catalog-card :filterproducts="filterproducts"></catalog-card>`,
+   props: ['products', 'searchline'],
+   computed: {
+      filterProducts: function () { // Поиск карточек по данным введенным пользователем
+         return this.products.filter((product) => {// Добавляем в новый массив карточки из основного массива с карточками из json, прошедшие проверку :
+            return product.title.toLowerCase().includes(this.searchline.toLowerCase())
+         })
+      }
+   },
+   template: `<catalog-card :filterproducts="filterProducts"></catalog-card>`,
 });
 Vue.component("catalog-card", {
    props: ['filterproducts'],
@@ -40,6 +47,11 @@ Vue.component("cart-wrapp", {
                      </div>`
 });
 Vue.component("cart-card", {
+   data() {
+      return {
+         countquantity: 1 // Счетчик товара в корзине
+      }
+   },
    props: ['cart'],
    template: ` <div class="shopping__grid-wrap">
                   <!-- Cards -->
@@ -50,12 +62,15 @@ Vue.component("cart-card", {
                      </a>
                      <div class="shopping-card__name">
                      <h3 class="shopping-name__h3">{{cartProduct.title}}</h3>
-                     <p class="shopping-card__text">Price:<span class="shopping-card__text-color">$ {{cartProduct.price}}</span></p>
+                     <p class="shopping-card__text shopping-card-price">Price:<span class="shopping-card__text-color" :price="cartProduct.price * cartProduct.currentQuantity">$ {{cartProduct.price * cartProduct.currentQuantity}}</span></p>
                      <p class="shopping-card__text">Color: <span class="shopping-card__text-span">{{cartProduct.color}}</span></p>
                      <p class="shopping-card__text">Size: <span class="shopping-card__text-span">{{cartProduct.size}}</span></p>
                      <p class="shopping-card__text shopping-card__text-block">Quantity: </p>
-                     <input class="shopping-card__input input-hover " type="number" name="quantity" required min="1"
-                        :value="cartProduct.currentQuantity">
+                     <div style="display:flex; align-items: center;">
+                     <i class="far fa-minus-square icon-cart" v-on:click="countQuantity(cartProduct)"></i>
+                     <p class="par-cart par-value">{{cartProduct.currentQuantity}}</p>
+                     <i class="far fa-plus-square icon-cart" v-on:click="countQuantity(cartProduct)"></i>
+                     </div>
                   </div>
                   <!-- close button -->
                   <button type="submit" class="shopping-card__close"
@@ -68,5 +83,20 @@ Vue.component("cart-card", {
                   </button>
                      
                    </div>
-               </div>`
+               </div>`,
+   computed: {
+   },
+   methods: {
+      countQuantity: function (cartProduct) {
+         if (event.target.classList.contains('fa-minus-square')) {
+            if (cartProduct.currentQuantity > 1) {
+               cartProduct.currentQuantity--
+            }
+         } else {
+            if (cartProduct.currentQuantity < 10) {
+               cartProduct.currentQuantity++
+            }
+         }
+      }
+   }
 })

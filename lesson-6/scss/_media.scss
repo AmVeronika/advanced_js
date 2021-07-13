@@ -9,6 +9,26 @@
    transition: all 0.5s linear;
 }
 
+.par-value {
+   line-height: 22px;
+    text-align: center;
+    font-weight: 900;
+}
+.par-cart {
+   display:block; 
+   border: 1px solid black;
+   width: 23px;
+   height: 23px;
+   margin-left: 5px;
+   margin-right: 5px;
+}
+.icon-cart {
+   font-size: 27px;
+}
+.icon-cart:hover {
+   color: #e5122e93;
+}
+
 // Media  $level_4
 @media (min-width: $level_4) {
    // Hover for input
