@@ -44,9 +44,9 @@ const app = new Vue({
          this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1)
 
       },
-      cartBlockClose() {// закрытие модального окна при нажатии на серое поле
+      cartBlockClose() {// закрытие модального окна при нажатии на серое поле (после открытия, срабатывает нажатие пробела и кнопка enter)
          if (event.target.classList.contains("cart")) {
-            this.showCart = !this.showCart 
+            this.showCart = !this.showCart
          }
       }
    },
