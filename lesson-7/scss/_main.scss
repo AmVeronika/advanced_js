@@ -1,0 +1,354 @@
+// Promo logo
+.promo {
+   background: #f1e4e6;
+   &__wrap {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      min-height: 764px;
+      overflow: hidden;
+      background: url(../img/main/promo-background.png) -215px bottom no-repeat;
+   }
+   &__h1 {
+      @include fontstyle(bold, h1, cap);
+      line-height: 40px;
+      margin-right: 100px;
+      position: relative;
+      animation: moveTo 2s forwards;
+   }
+   &__h1::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      bottom: 1px;
+      display: block;
+      width: 12px;
+      height: 92px;
+      background: $bittersweet;
+   }
+
+   &__span {
+      @include fontstyle(semibold, 0, cap);
+      font-size: 32px;
+      line-height: 39px;
+      &-color {
+         color: $bittersweet;
+      }
+   }
+}
+
+// Categories
+
+.categories {
+   &__wrap {
+      display: grid;
+      gap: 30px;
+      margin-top: 65px;
+      margin-bottom: 96px;
+   }
+   &__card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-position: top center;
+      background-size: cover;
+      overflow: hidden;
+   }
+   &__card4 {
+      grid-column: 1/4;
+      background-position: 0 0;
+   }
+   &-card {
+      &__wrap {
+         position: absolute;
+         text-align: center;
+      }
+   }
+   &-wrap__h5 {
+      @include fontstyle(regular, h5, cap);
+      line-height: 20px;
+      color: $white;
+   }
+   &-wrap__h3 {
+      @include fontstyle(semibold, h3, cap);
+      line-height: 29px;
+      color: $bittersweet;
+   }
+}
+
+// Product
+.product {
+   &__wrap {
+      text-align: center;
+      margin-bottom: 95px;
+   }
+
+   // Title
+   &__h2 {
+      @include fontstyle(regular, h2, cap);
+      line-height: 36px;
+   }
+   &__text {
+      @include fontstyle(regular, text, none);
+      line-height: 17px;
+      color: $nobel;
+   }
+   // Container with cart
+   &__grid-wrap {
+      display: grid;
+      gap: 30px;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, 360px);
+      margin: 48px auto;
+      z-index: 1;
+   }
+   &__card {
+      display: grid;
+      @include fontstyle(regular, h4, upper);
+      background: #f8f8f8;
+      position: relative;
+   }
+   &-card__img {
+      cursor: pointer;
+      width: 100%;
+   }
+   &-card__name {
+      text-decoration: none;
+      text-align: left;
+      display: grid;
+      grid-template-columns: 360px;
+      grid-template-rows: min-content 1fr min-content;
+      padding: 24px 0 20px;
+   }
+   &-card__h5 {
+      @include fontstyle(regular, 0, upper);
+      font-size: 13px;
+      line-height: 16px;
+      color: $black;
+      padding: 0 29px 0 17px;
+   }
+   &-card__text {
+      @include fontstyle(light, text, none);
+      line-height: 17px;
+      color: $zambezi;
+      padding: 12px 29px 18px 17px;
+   }
+   &-card__text-options {
+      @include fontstyle(regular, 0, upper);
+      font-size: 16px;
+      line-height: 20px;
+      color: $bittersweet;
+      padding: 0 29px 0 17px;
+   }
+
+   // Botton
+   &__button {
+      display: inline-block;
+      @include fontstyle(regular, h5, none);
+      line-height: 20px;
+      color: $bittersweet;
+      padding: 14px 39px;
+      text-decoration: none;
+      border: 1px solid $bittersweet;
+   }
+}
+// Style card-hover
+.card-hover {
+   display: flex;
+   opacity: 0;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0 auto;
+   width: 138px;
+   border: 1px solid $white;
+   background: none;
+   padding: 13px;
+   position: absolute;
+   top: 33%;
+   left: 30%;
+   &__text {
+      @include fontstyle(regular, text, none);
+      line-height: 17px;
+      color: $white;
+   }
+}
+// Style card-hover end
+
+// Feature
+.feature {
+   background: #222224;
+   &__flex-wrap {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      padding: 103px 15px;
+   }
+   &__item {
+      max-width: 32%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+   }
+   &-item__h4 {
+      @include fontstyle(semibold, 0, none);
+      font-size: 20px;
+      color: $snow;
+      padding: 25px 0 13px;
+   }
+   &-item__text {
+      @include fontstyle(light, text, none);
+      line-height: 17px;
+      color: $snow;
+   }
+}
+
+// Subscribe
+.subscribe {
+   background: url(../img/header-footer/footer-background.jpg) bottom no-repeat;
+   background-size: cover;
+   &__wrap {
+      display: flex;
+      justify-content: space-between;
+      padding: 100px 15px 130px;
+   }
+   &__info {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      width: 30%;
+      text-align: center;
+      padding: 0;
+   }
+   &-info {
+      &__img {
+         border-radius: 100%;
+         margin-bottom: 30px;
+      }
+      &__h4 {
+         @include fontstyle(regular, 0, none);
+         font-size: 20px;
+         color: #222224;
+         &-span {
+            font-style: italic;
+         }
+      }
+   }
+   &__form-wrap {
+      margin-right: 100px;
+      margin-top: 35px;
+      text-align: center;
+   }
+   &__h3 {
+      @include fontstyle(semibold, h3, upper);
+      line-height: 40px;
+   }
+   &__h4 {
+      @include fontstyle(regular, h4, upper);
+   }
+   &__form {
+      display: flex;
+      justify-content: center;
+      margin-top: 32px;
+   }
+   &__input {
+      padding: 16px 85px 16px 28px;
+      border-radius: 23px 0 0 23px;
+      background-color: #e1e1e1;
+      border: 1px solid #e1e1e1;
+      &::placeholder {
+         @include fontstyle(regular, text, cap);
+         opacity: 0.67;
+         color: #222224;
+         line-height: 54px;
+         letter-spacing: 0.35px;
+         line-height: normal;
+      }
+   }
+   &__button {
+      @include fontstyle(regular, text, cap);
+      color: $white;
+      padding: 15px 17px;
+      background: $bittersweet;
+      border: 1px solid $bittersweet;
+      border-radius: 0 23px 23px 0;
+      letter-spacing: 0.35px;
+   }
+}
+
+// ANIMATIONS
+@keyframes moveTo {
+   0% {
+      left: 100%;
+   }
+   100% {
+      left: 0;
+   }
+}
+
+// Feature
+@keyframes bip-bip {
+   0% {
+      left: 0;
+      bottom: 0;
+   }
+
+   25% {
+      left: 125px;
+      bottom: 0;
+   }
+
+   50% {
+      left: 0;
+      bottom: 0;
+   }
+
+   75% {
+      left: -125px;
+      bottom: 0;
+   }
+
+   100% {
+      left: 0;
+      bottom: 0;
+   }
+}
+
+@keyframes rot-bip {
+   50% {
+      transform: rotateY(180deg);
+   }
+}
+@keyframes rot-disc {
+   0% {
+      transform: rotate(360deg);
+   }
+}
+@keyframes rot-crown {
+   0% {
+      transform: rotateY(360deg);
+   }
+   // 0% {
+   //    transform: rotateY(45deg);
+   // }
+   // 100% {
+   //    transform: rotateY(-45deg);
+   // }
+}
+
+.car-bip {
+   position: relative;
+   animation: bip-bip 5s linear forwards infinite, rot-bip 5s cubic-bezier(0.42, 0.07, 0.5, 0.91) infinite;
+}
+
+.feature-item__svg--path {
+   transform-origin: 50% 50%;
+   animation: rot-disc 5s linear infinite;
+}
+
+.rot-crown {
+   animation: rot-crown 3s linear infinite;
+}
