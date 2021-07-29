@@ -19,17 +19,23 @@ const app = new Vue({
       cartProductPrice() {// Общая цена корзины
          return 900
       },
-         commonPrice() {
-            return this.cartProduct
+      commonPrice() {
+         return this.cartProduct
       },
    },
    methods: {
       makeGETRequest() { //Запрос списка товаров
-         fetch(`${this.API_URL}/catalogData.json`) //fetch- функция, которая выполняет ajax запрос
-            .then(text => text.json())// .json() - метод, который парсит строку и возвращает объект промис
+         fetch(`/catalogData`) //fetch- функция, которая выполняет ajax запрос
+            .then(data => data.json())// .json() - метод, который парсит строку и возвращает объект промис
             .catch(err => console.log(err))
             .then(data => {
                this.products = [...data]
+            })
+         fetch(`/cart`) //fetch- функция, которая выполняет ajax запрос
+            .then(data => data.json())// .json() - метод, который парсит строку и возвращает объект промис
+            .catch(err => console.log(err))
+            .then(data => {
+               this.cartProducts = [...data]
             })
       },
       addListProductCart(product) {//Добавление карточек в корзину 
@@ -38,11 +44,26 @@ const app = new Vue({
 
          } else {
             this.cartProducts.push(product)// при вызове метода сразу передали нужную карточку
+            fetch('/cart', {
+               method: 'POST',
+               headers: {
+                   "Content-Type": "application/json"
+               },
+               body: JSON.stringify(product)
+           })
          }
       },
       removeListProductCart(cartProduct) { //Удаление карточки из корзины
          cartProduct.currentQuantity = 1 //Обнуление количества товаров при удалении карточки
-         this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1)
+         
+        this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1)
+        fetch('/cart', {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(cartProduct)
+        })
 
       },
       cartBlockClose() {// закрытие модального окна при нажатии на серое поле (после открытия, срабатывает нажатие пробела и кнопка enter)
