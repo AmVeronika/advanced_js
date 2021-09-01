@@ -245,7 +245,7 @@
 
                </div> <!-- Sidebar end -->
                <!--CATALOG Product Vue-->   
-               <catalog-wrapp :filterproducts="filterProducts"></catalog-wrapp>
+               <catalog-wrapp :products="products" :searchline="searchLine"></catalog-wrapp>
                <!-- Pagination  -->
                <ul class="product-pagination__list">
                   <li class="product-list"><button class="product-list__link"><i
@@ -370,10 +370,10 @@
                <!-- Total cost  -->
                <div class="shopping__totalcost">
                   <p class="shopping-totalcost__small shopping-totalcost__small-indent">Sub total</p>
-                  <p class="shopping-totalcost__small">$900</p>
+                  <p class="shopping-totalcost__small">$ {{ cartProductPrice }}</p>
                   <br>
                   <h5 class="shopping-totalcost__h5 shopping-totalcost__indent">Grand Total</h5>
-                  <h5 class="shopping-totalcost__h5 shopping-totalcost__h5-collor">$900</h5>
+                  <h5 class="shopping-totalcost__h5 shopping-totalcost__h5-collor">$ {{ cartProductPrice }}</h5>
                   <div class="shopping__border"></div>
                   <button class="shopping-totalcost__button button-hover3" type="submit">Proceed to checkout</button>
                </div>

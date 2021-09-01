@@ -16,11 +16,12 @@ const app = new Vue({
       CounterCart: function () { // Метод по увеличению значения счетчика при нажатии кнопки - добавить
          return this.counterCart = this.cartProducts.length
       },
-      filterProducts: function () { // Поиск карточек по данным введенным пользователем
-         return this.products.filter((product) => {// Добавляем в новый массив карточки из основного массива с карточками из json, прошедшие проверку :
-            return product.title.toLowerCase().includes(this.searchLine.toLowerCase())
-         })
-      }
+      cartProductPrice() {// Общая цена корзины
+         return 900
+      },
+         commonPrice() {
+            return this.cartProduct
+      },
    },
    methods: {
       makeGETRequest() { //Запрос списка товаров
@@ -44,9 +45,9 @@ const app = new Vue({
          this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1)
 
       },
-      cartBlockClose() {// закрытие модального окна при нажатии на серое поле
+      cartBlockClose() {// закрытие модального окна при нажатии на серое поле (после открытия, срабатывает нажатие пробела и кнопка enter)
          if (event.target.classList.contains("cart")) {
-            this.showCart = !this.showCart 
+            this.showCart = !this.showCart
          }
       }
    },

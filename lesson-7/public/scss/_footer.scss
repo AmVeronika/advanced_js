@@ -1,0 +1,28 @@
+// Footer
+.footer {
+   @extend .feature;
+   &__wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   &__h5 {
+      @include fontstyle(regular, h5, none);
+      color: $snow;
+   }
+   &__links {
+      display: grid;
+      grid-gap: 8px;
+      grid-template-columns: repeat(4, minmax(30px, 1fr));
+      padding: 23px 0;
+   }
+   &-links__link {
+      width: 32px;
+      height: 32px;
+      text-align: center;
+      font-size: 15px;
+      line-height: 32px;
+      color: $black;
+      background: $white;
+   }
+}
